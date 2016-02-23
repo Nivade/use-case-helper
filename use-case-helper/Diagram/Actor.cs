@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace uch
+namespace uch.Drawables
 {
-    public class ContentCollection
+    public class Actor : Element
     {
 
-        private List<Element> drawables = new List<Element>(); 
-
-        public ContentCollection()
+        public Actor(string name) : base(name)
         {
-            
+            Name = name;
         }
+
     }
 }

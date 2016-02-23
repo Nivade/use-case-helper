@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace uch
 {
-    public class ContentCollection
+    public class Element
     {
 
-        private List<Element> drawables = new List<Element>(); 
+        public string Name { get; set; }
 
-        public ContentCollection()
+
+
+        public Element(string name)
         {
-            
+            Name = name;
         }
     }
 }
