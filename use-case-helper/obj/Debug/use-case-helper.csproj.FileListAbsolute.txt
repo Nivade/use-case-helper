@@ -1,2 +1,10 @@
-C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\use-case-helper.exe.config
 C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\UseCaseHelper.exe.config
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\use-case-helper.csprojResolveAssemblyReference.cache
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Diagram.Diagram.resources
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Properties.Resources.resources
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\use-case-helper.csproj.GenerateResource.Cache
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\UseCaseHelper.exe
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\UseCaseHelper.pdb
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\UseCaseHelper.exe
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\UseCaseHelper.pdb
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\use_case_helper.fMain.resources
