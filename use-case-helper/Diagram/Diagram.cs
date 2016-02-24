@@ -12,26 +12,14 @@ using uch.Drawables;
 
 namespace uch.Diagram
 {
-    public enum Mode
-    {
-        Actor,
-        Line,
-        UseCase
-    }
 
     public partial class Diagram : UserControl
     {
-        public Mode Mode { get; set; }
-
-
-
         List<Element> elements = new List<Element>();
 
         public Diagram()
         {
             InitializeComponent();
-
-            Mode = Mode.Actor;
         }
 
 
@@ -47,21 +35,6 @@ namespace uch.Diagram
             elements.Add(element);
 
             Refresh();
-        }
-
-        private void OnClick(object sender, EventArgs e)
-        {
-            /*var relativeMouse = this.PointToClient(Cursor.Position);
-
-            switch (Mode)
-            {
-                case Mode.Actor:
-                    elements.Add(new Actor(relativeMouse));
-                    break;
-            }
-
-
-            Refresh();*/
         }
 
         private void OnPaint(object sender, PaintEventArgs e)
