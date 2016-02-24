@@ -55,6 +55,8 @@
       <DependentUpon>Diagram.cs</DependentUpon>
     </Compile>
     <Compile Include="Diagram\Element.cs" />
+    <Compile Include="Diagram\Line.cs" />
+    <Compile Include="Diagram\UseCase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +95,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\stickman.PNG" />
+    <Content Include="Assets\stickman.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
