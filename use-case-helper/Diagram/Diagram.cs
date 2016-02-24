@@ -23,7 +23,10 @@ namespace uch.Diagram
         }
 
 
-
+        /// <summary>
+        /// Adds the given element to the diagram.
+        /// </summary>
+        /// <param name="element"> The element to add. </param>
         public void Create(Element element)
         {
             if (element == null)
@@ -35,6 +38,20 @@ namespace uch.Diagram
             elements.Add(element);
 
             Refresh();
+        }
+
+
+
+        public void Select(Point point)
+        {
+            foreach (Element e in elements)
+            {
+                if (e.Contains(point))
+                {
+                    Console.WriteLine("We got em.");
+                    return;
+                }
+            }
         }
 
         private void OnPaint(object sender, PaintEventArgs e)

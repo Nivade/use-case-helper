@@ -142,7 +142,6 @@
             // 
             this.diagram.BackColor = System.Drawing.Color.White;
             this.diagram.Location = new System.Drawing.Point(12, 155);
-            this.diagram.Mode = uch.Diagram.Mode.Actor;
             this.diagram.Name = "diagram";
             this.diagram.Size = new System.Drawing.Size(746, 371);
             this.diagram.TabIndex = 2;

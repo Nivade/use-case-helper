@@ -33,7 +33,7 @@ namespace use_case_helper
             }
             else if (rbSelect.Checked)
             {
-                
+                diagram.Select(diagramMousePosition);
             }
         }
     }

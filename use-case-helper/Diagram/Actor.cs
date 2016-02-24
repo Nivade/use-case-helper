@@ -18,6 +18,23 @@ namespace uch.Drawables
 
 
 
+        public override bool Contains(Point point)
+        {
+            Rectangle boundingBox = new Rectangle(position, graphic.Size);
+
+            if (point.X >= boundingBox.X && point.X <= (boundingBox.X + boundingBox.Width))
+            {
+                if (point.Y >= boundingBox.Y && point.Y <= (boundingBox.Y + boundingBox.Height))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+
         public override void Draw(Graphics graphics)
         {
             graphics.DrawImage(graphic, position);

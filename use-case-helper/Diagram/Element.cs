@@ -17,6 +17,13 @@ namespace uch
             this.position = position;
         }
 
+
+
+        public virtual bool Contains(Point point)
+        {
+            return point == position;
+        }
+
         public virtual void Draw(Graphics graphics)
         {
             
