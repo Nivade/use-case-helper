@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.gbElements = new System.Windows.Forms.GroupBox();
-            this.gbModes = new System.Windows.Forms.GroupBox();
-            this.rbActor = new System.Windows.Forms.RadioButton();
-            this.rbUseCase = new System.Windows.Forms.RadioButton();
             this.rbLine = new System.Windows.Forms.RadioButton();
-            this.rbCreate = new System.Windows.Forms.RadioButton();
+            this.rbUseCase = new System.Windows.Forms.RadioButton();
+            this.rbActor = new System.Windows.Forms.RadioButton();
+            this.gbModes = new System.Windows.Forms.GroupBox();
             this.rbSelect = new System.Windows.Forms.RadioButton();
-            this.diagram = new uch.Diagram.Diagram();
+            this.rbCreate = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.diagram = new uch.Diagram.Diagram();
             this.gbElements.SuspendLayout();
             this.gbModes.SuspendLayout();
             this.SuspendLayout();
@@ -54,27 +54,16 @@
             this.gbElements.TabStop = false;
             this.gbElements.Text = "Elements";
             // 
-            // gbModes
+            // rbLine
             // 
-            this.gbModes.Controls.Add(this.rbSelect);
-            this.gbModes.Controls.Add(this.rbCreate);
-            this.gbModes.Location = new System.Drawing.Point(123, 12);
-            this.gbModes.Name = "gbModes";
-            this.gbModes.Size = new System.Drawing.Size(90, 79);
-            this.gbModes.TabIndex = 1;
-            this.gbModes.TabStop = false;
-            this.gbModes.Text = "Modes";
-            // 
-            // rbActor
-            // 
-            this.rbActor.AutoSize = true;
-            this.rbActor.Location = new System.Drawing.Point(18, 19);
-            this.rbActor.Name = "rbActor";
-            this.rbActor.Size = new System.Drawing.Size(50, 17);
-            this.rbActor.TabIndex = 0;
-            this.rbActor.TabStop = true;
-            this.rbActor.Text = "Actor";
-            this.rbActor.UseVisualStyleBackColor = true;
+            this.rbLine.AutoSize = true;
+            this.rbLine.Location = new System.Drawing.Point(18, 83);
+            this.rbLine.Name = "rbLine";
+            this.rbLine.Size = new System.Drawing.Size(45, 17);
+            this.rbLine.TabIndex = 2;
+            this.rbLine.TabStop = true;
+            this.rbLine.Text = "Line";
+            this.rbLine.UseVisualStyleBackColor = true;
             // 
             // rbUseCase
             // 
@@ -87,27 +76,27 @@
             this.rbUseCase.Text = "Use case";
             this.rbUseCase.UseVisualStyleBackColor = true;
             // 
-            // rbLine
+            // rbActor
             // 
-            this.rbLine.AutoSize = true;
-            this.rbLine.Location = new System.Drawing.Point(18, 83);
-            this.rbLine.Name = "rbLine";
-            this.rbLine.Size = new System.Drawing.Size(45, 17);
-            this.rbLine.TabIndex = 2;
-            this.rbLine.TabStop = true;
-            this.rbLine.Text = "Line";
-            this.rbLine.UseVisualStyleBackColor = true;
+            this.rbActor.AutoSize = true;
+            this.rbActor.Location = new System.Drawing.Point(18, 19);
+            this.rbActor.Name = "rbActor";
+            this.rbActor.Size = new System.Drawing.Size(50, 17);
+            this.rbActor.TabIndex = 0;
+            this.rbActor.TabStop = true;
+            this.rbActor.Text = "Actor";
+            this.rbActor.UseVisualStyleBackColor = true;
             // 
-            // rbCreate
+            // gbModes
             // 
-            this.rbCreate.AutoSize = true;
-            this.rbCreate.Location = new System.Drawing.Point(18, 19);
-            this.rbCreate.Name = "rbCreate";
-            this.rbCreate.Size = new System.Drawing.Size(56, 17);
-            this.rbCreate.TabIndex = 1;
-            this.rbCreate.TabStop = true;
-            this.rbCreate.Text = "Create";
-            this.rbCreate.UseVisualStyleBackColor = true;
+            this.gbModes.Controls.Add(this.rbSelect);
+            this.gbModes.Controls.Add(this.rbCreate);
+            this.gbModes.Location = new System.Drawing.Point(123, 12);
+            this.gbModes.Name = "gbModes";
+            this.gbModes.Size = new System.Drawing.Size(90, 79);
+            this.gbModes.TabIndex = 1;
+            this.gbModes.TabStop = false;
+            this.gbModes.Text = "Modes";
             // 
             // rbSelect
             // 
@@ -120,13 +109,16 @@
             this.rbSelect.Text = "Select";
             this.rbSelect.UseVisualStyleBackColor = true;
             // 
-            // diagram
+            // rbCreate
             // 
-            this.diagram.BackColor = System.Drawing.Color.White;
-            this.diagram.Location = new System.Drawing.Point(12, 155);
-            this.diagram.Name = "diagram";
-            this.diagram.Size = new System.Drawing.Size(746, 371);
-            this.diagram.TabIndex = 2;
+            this.rbCreate.AutoSize = true;
+            this.rbCreate.Location = new System.Drawing.Point(18, 19);
+            this.rbCreate.Name = "rbCreate";
+            this.rbCreate.Size = new System.Drawing.Size(56, 17);
+            this.rbCreate.TabIndex = 1;
+            this.rbCreate.TabStop = true;
+            this.rbCreate.Text = "Create";
+            this.rbCreate.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
@@ -145,6 +137,16 @@
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // diagram
+            // 
+            this.diagram.BackColor = System.Drawing.Color.White;
+            this.diagram.Location = new System.Drawing.Point(12, 155);
+            this.diagram.Mode = uch.Diagram.Mode.Actor;
+            this.diagram.Name = "diagram";
+            this.diagram.Size = new System.Drawing.Size(746, 371);
+            this.diagram.TabIndex = 2;
+            this.diagram.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnClick);
             // 
             // fMain
             // 

@@ -38,12 +38,20 @@ namespace uch.Diagram
 
         public void Create(Element element)
         {
-            
+            if (element == null)
+            {
+                Console.WriteLine("Diagram::Create: Element is null");
+                return;
+            }
+
+            elements.Add(element);
+
+            Refresh();
         }
 
         private void OnClick(object sender, EventArgs e)
         {
-            var relativeMouse = this.PointToClient(Cursor.Position);
+            /*var relativeMouse = this.PointToClient(Cursor.Position);
 
             switch (Mode)
             {
@@ -53,7 +61,7 @@ namespace uch.Diagram
             }
 
 
-            Refresh();
+            Refresh();*/
         }
 
         private void OnPaint(object sender, PaintEventArgs e)
