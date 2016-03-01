@@ -55,6 +55,7 @@
       <DependentUpon>Diagram.cs</DependentUpon>
     </Compile>
     <Compile Include="Diagram\Element.cs" />
+    <Compile Include="Diagram\IDrawable.cs" />
     <Compile Include="Diagram\Line.cs" />
     <Compile Include="Diagram\PropertyWindow.cs">
       <SubType>Form</SubType>

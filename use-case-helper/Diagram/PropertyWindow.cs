@@ -12,9 +12,48 @@ namespace uch.Diagram
 {
     public partial class PropertyWindow : Form
     {
-        public PropertyWindow()
+
+        public Element ActiveElement
+        {
+            get { return activeElement; }
+            set
+            {
+                if (value == null)
+                    return;
+
+                activeElement = value;
+                Work((UseCase) value);
+            }
+        }
+
+
+        private Element activeElement;
+        private readonly Form parent;
+
+
+        public PropertyWindow(Form parent, UseCase usecase)
         {
             InitializeComponent();
+
+            ActiveElement = usecase;
+            this.parent = parent;
+        }
+
+
+
+        public void Work(UseCase usecase)
+        {
+            tbNaam.Text = usecase.Naam;
+            tbSamenvatting.Text = usecase.Samenvatting;
+        }
+
+        private void OnTextboxNameChanged(object sender, EventArgs e)
+        {
+            if (ActiveElement != null)
+            {
+                ((UseCase) ActiveElement).Naam = tbNaam.Text;
+                parent?.Refresh();
+            }
         }
     }
 }

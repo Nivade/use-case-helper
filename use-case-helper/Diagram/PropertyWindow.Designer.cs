@@ -52,6 +52,7 @@
             this.tbNaam.Name = "tbNaam";
             this.tbNaam.Size = new System.Drawing.Size(361, 24);
             this.tbNaam.TabIndex = 0;
+            this.tbNaam.TextChanged += new System.EventHandler(this.OnTextboxNameChanged);
             // 
             // tbSamenvatting
             // 

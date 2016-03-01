@@ -35,6 +35,17 @@ namespace use_case_helper
                 {
                     diagram.Create(new Actor(diagramMousePosition));
                 }
+                else if (rbUseCase.Checked)
+                {
+
+                    UseCase uc = new UseCase(diagramMousePosition, this.Font);
+                    diagram.Create(uc);
+
+                    PropertyWindow pw = new PropertyWindow(this, uc);
+                    pw.Show(this);
+                    pw.Location = new Point(Location.X + Width, Location.Y);
+
+                }
             }
             else if (rbSelect.Checked)
             {
@@ -42,7 +53,7 @@ namespace use_case_helper
 
                 if (propertyWindow == null)
                 {
-                    propertyWindow = new PropertyWindow();
+                    //propertyWindow = new PropertyWindow();
                 }
             }
         }

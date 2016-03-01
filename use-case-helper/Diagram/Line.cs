@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace uch.Diagram
 {
-    public class Line : Element
+    public class Line : Element, IDrawable
     {
 
 
 
-        public Line(Point start, Point end) : base(start)
+        public Line(Point start, Point end)
         {
             
         }
@@ -26,9 +26,9 @@ namespace uch.Diagram
 
 
 
-        public override void Draw(Graphics graphics)
+        public void Draw(Graphics graphics)
         {
-            base.Draw(graphics);
+            
         }
 
     }

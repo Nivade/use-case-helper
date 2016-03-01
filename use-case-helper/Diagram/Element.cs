@@ -9,24 +9,16 @@ namespace uch
 {
     public class Element
     {
+        
 
-        protected Point position;
-
-        public Element(Point position)
+        public Element()
         {
-            this.position = position;
+
         }
-
-
 
         public virtual bool Contains(Point point)
         {
-            return point == position;
-        }
-
-        public virtual void Draw(Graphics graphics)
-        {
-            
+            return false;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace uch.Diagram
     {
         List<Element> elements = new List<Element>();
 
+
         public Diagram()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace uch.Diagram
         {
             e.Graphics.Clear(Color.White);
 
-            foreach (Element element in elements)
+            foreach (IDrawable element in elements)
             {
                 element.Draw(e.Graphics);
             }
