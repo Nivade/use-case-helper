@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using uch.Diagram;
 using uch.Drawables;
 
 
@@ -14,6 +15,10 @@ namespace use_case_helper
 {
     public partial class fMain : Form
     {
+
+        private PropertyWindow propertyWindow;
+
+
         public fMain()
         {
             InitializeComponent();
@@ -34,6 +39,11 @@ namespace use_case_helper
             else if (rbSelect.Checked)
             {
                 diagram.Select(diagramMousePosition);
+
+                if (propertyWindow == null)
+                {
+                    propertyWindow = new PropertyWindow();
+                }
             }
         }
     }

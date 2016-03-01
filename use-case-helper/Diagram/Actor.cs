@@ -9,7 +9,7 @@ namespace uch.Drawables
 {
     public class Actor : Element
     {
-        Image graphic = Image.FromFile("Assets/stickman.png");
+        private readonly Image graphic = Image.FromFile("Assets/stickman.png");
 
         public Actor(Point position) : base(position)
         {
@@ -32,7 +32,6 @@ namespace uch.Drawables
 
             return false;
         }
-
 
 
         public override void Draw(Graphics graphics)

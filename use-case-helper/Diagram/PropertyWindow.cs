@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using uch.Drawables;
-
+using System.Windows.Forms;
 
 namespace uch.Diagram
 {
-    public class UseCase : Element
+    public partial class PropertyWindow : Form
     {
-        List<Actor> actors = new List<Actor>();
-         
-        public UseCase(Point position) : base(position)
+        public PropertyWindow()
         {
-            
+            InitializeComponent();
         }
-
-
     }
 }
