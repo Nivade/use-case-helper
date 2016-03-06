@@ -1,6 +1,6 @@
 ﻿namespace uch.Diagram
 {
-    partial class PropertyWindow
+    partial class UsecasePropertyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -66,6 +66,7 @@
             // tbActoren
             // 
             this.tbActoren.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbActoren.Enabled = false;
             this.tbActoren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbActoren.Location = new System.Drawing.Point(150, 72);
             this.tbActoren.Name = "tbActoren";
@@ -180,7 +181,7 @@
             this.lResultaat.TabIndex = 13;
             this.lResultaat.Text = "Resultaat:";
             // 
-            // PropertyWindow
+            // UsecasePropertyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,7 +200,7 @@
             this.Controls.Add(this.tbActoren);
             this.Controls.Add(this.tbSamenvatting);
             this.Controls.Add(this.tbNaam);
-            this.Name = "PropertyWindow";
+            this.Name = "UsecasePropertyForm";
             this.Text = "PropertyWindow";
             this.ResumeLayout(false);
             this.PerformLayout();

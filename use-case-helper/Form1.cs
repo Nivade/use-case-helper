@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 using uch.Diagram;
-using uch.Drawables;
+using Actor = uch.Diagram.Objects.Actor;
 
 
 namespace use_case_helper
 {
-    public partial class fMain : Form
+    public partial class fMain : MaterialForm
     {
 
-        private PropertyWindow propertyWindow;
+        private UsecasePropertyForm usecasePropertyForm;
 
 
         public fMain()
@@ -27,35 +28,13 @@ namespace use_case_helper
         private void OnClick(object sender, MouseEventArgs e)
         {
 
-            var diagramMousePosition = diagram.PointToClient(Cursor.Position);
+            
+        }
 
-            if (rbCreate.Checked)
-            {
-                if (rbActor.Checked)
-                {
-                    diagram.Create(new Actor(diagramMousePosition));
-                }
-                else if (rbUseCase.Checked)
-                {
-
-                    UseCase uc = new UseCase(diagramMousePosition, this.Font);
-                    diagram.Create(uc);
-
-                    PropertyWindow pw = new PropertyWindow(this, uc);
-                    pw.Show(this);
-                    pw.Location = new Point(Location.X + Width, Location.Y);
-
-                }
-            }
-            else if (rbSelect.Checked)
-            {
-                diagram.Select(diagramMousePosition);
-
-                if (propertyWindow == null)
-                {
-                    //propertyWindow = new PropertyWindow();
-                }
-            }
+        private void OnInsertActorClicked(object sender, EventArgs e)
+        {
+            diagram.CreateActor();
+            
         }
     }
 }

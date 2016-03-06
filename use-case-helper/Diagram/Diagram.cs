@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using uch.Drawables;
+using uch.Diagram.Objects;
+using Actor = uch.Diagram.Objects.Actor;
 
 
 namespace uch.Diagram
@@ -15,8 +16,9 @@ namespace uch.Diagram
 
     public partial class Diagram : UserControl
     {
-        List<Element> elements = new List<Element>();
-
+        List<ModelObject> elements = new List<ModelObject>();
+        List<Actor> actors = new List<Actor>();
+        List<Usecase> usecases = new List<Usecase>(); 
 
         public Diagram()
         {
@@ -24,33 +26,68 @@ namespace uch.Diagram
         }
 
 
+
+        public void CreateActor()
+        {
+            Actor actor = new Actor(this);
+
+            actors.Add(actor);
+            Controls.Add(actor);
+
+            foreach (Actor a in actors)
+                a.Unselect();
+
+            actor.SelectAll();
+        }
+
+
+
+        public void CreateUsecase()
+        {
+            Usecase usecase = new Usecase(this);
+
+            usecases.Add(usecase);
+            Controls.Add(usecase);
+
+            foreach (Usecase c in usecases)
+                c.Unselect();
+        }
+
+
         /// <summary>
         /// Adds the given element to the diagram.
         /// </summary>
-        /// <param name="element"> The element to add. </param>
-        public void Create(Element element)
+        /// <param name="modelObject"> The element to add. </param>
+        public void Create(ModelObject modelObject)
         {
-            if (element == null)
+            if (modelObject == null)
             {
                 Console.WriteLine("Diagram::Create: Element is null");
                 return;
             }
 
-            elements.Add(element);
+            elements.Add(modelObject);
 
             Refresh();
+
+            modelObject.PropertyChanged += (sender, args) => Refresh();
         }
 
 
 
         public void Select(Point point)
         {
-            foreach (Element e in elements)
+
+           
+            foreach (ModelObject e in elements)
             {
+                if (e.IsSelected)
+                    e.IsSelected = false;
+
                 if (e.Contains(point))
                 {
-                    Console.WriteLine("We got em.");
-                    return;
+                    e.IsSelected = true;
+                    Refresh();
                 }
             }
         }
@@ -63,6 +100,12 @@ namespace uch.Diagram
             {
                 element.Draw(e.Graphics);
             }
+        }
+
+        private void OnClick(object sender, EventArgs e)
+        {
+            foreach (Actor a in actors)
+                a.Unselect();
         }
     }
 }

@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace uch.Diagram
 {
-    public class Line : Element, IDrawable
+    public class Relationship : ModelObject, IDrawable
     {
 
-
-
-        public Line(Point start, Point end)
+        public Relationship(Point start, Point end)
         {
             
         }

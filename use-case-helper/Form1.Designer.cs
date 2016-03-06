@@ -28,157 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbElements = new System.Windows.Forms.GroupBox();
-            this.rbLine = new System.Windows.Forms.RadioButton();
-            this.rbUseCase = new System.Windows.Forms.RadioButton();
-            this.rbActor = new System.Windows.Forms.RadioButton();
-            this.gbModes = new System.Windows.Forms.GroupBox();
-            this.rbSelect = new System.Windows.Forms.RadioButton();
-            this.rbCreate = new System.Windows.Forms.RadioButton();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.diagram = new uch.Diagram.Diagram();
-            this.gbElements.SuspendLayout();
-            this.gbModes.SuspendLayout();
+            this.pMain = new System.Windows.Forms.Panel();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usecaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.status = new System.Windows.Forms.StatusStrip();
+            this.newDiagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pMain.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gbElements
-            // 
-            this.gbElements.Controls.Add(this.rbLine);
-            this.gbElements.Controls.Add(this.rbUseCase);
-            this.gbElements.Controls.Add(this.rbActor);
-            this.gbElements.Location = new System.Drawing.Point(12, 12);
-            this.gbElements.Name = "gbElements";
-            this.gbElements.Size = new System.Drawing.Size(105, 116);
-            this.gbElements.TabIndex = 0;
-            this.gbElements.TabStop = false;
-            this.gbElements.Text = "Elements";
-            // 
-            // rbLine
-            // 
-            this.rbLine.AutoSize = true;
-            this.rbLine.Location = new System.Drawing.Point(18, 83);
-            this.rbLine.Name = "rbLine";
-            this.rbLine.Size = new System.Drawing.Size(45, 17);
-            this.rbLine.TabIndex = 2;
-            this.rbLine.TabStop = true;
-            this.rbLine.Text = "Line";
-            this.rbLine.UseVisualStyleBackColor = true;
-            // 
-            // rbUseCase
-            // 
-            this.rbUseCase.AutoSize = true;
-            this.rbUseCase.Location = new System.Drawing.Point(18, 50);
-            this.rbUseCase.Name = "rbUseCase";
-            this.rbUseCase.Size = new System.Drawing.Size(70, 17);
-            this.rbUseCase.TabIndex = 1;
-            this.rbUseCase.TabStop = true;
-            this.rbUseCase.Text = "Use case";
-            this.rbUseCase.UseVisualStyleBackColor = true;
-            // 
-            // rbActor
-            // 
-            this.rbActor.AutoSize = true;
-            this.rbActor.Location = new System.Drawing.Point(18, 19);
-            this.rbActor.Name = "rbActor";
-            this.rbActor.Size = new System.Drawing.Size(50, 17);
-            this.rbActor.TabIndex = 0;
-            this.rbActor.TabStop = true;
-            this.rbActor.Text = "Actor";
-            this.rbActor.UseVisualStyleBackColor = true;
-            // 
-            // gbModes
-            // 
-            this.gbModes.Controls.Add(this.rbSelect);
-            this.gbModes.Controls.Add(this.rbCreate);
-            this.gbModes.Location = new System.Drawing.Point(123, 12);
-            this.gbModes.Name = "gbModes";
-            this.gbModes.Size = new System.Drawing.Size(90, 79);
-            this.gbModes.TabIndex = 1;
-            this.gbModes.TabStop = false;
-            this.gbModes.Text = "Modes";
-            // 
-            // rbSelect
-            // 
-            this.rbSelect.AutoSize = true;
-            this.rbSelect.Location = new System.Drawing.Point(18, 50);
-            this.rbSelect.Name = "rbSelect";
-            this.rbSelect.Size = new System.Drawing.Size(55, 17);
-            this.rbSelect.TabIndex = 2;
-            this.rbSelect.TabStop = true;
-            this.rbSelect.Text = "Select";
-            this.rbSelect.UseVisualStyleBackColor = true;
-            // 
-            // rbCreate
-            // 
-            this.rbCreate.AutoSize = true;
-            this.rbCreate.Location = new System.Drawing.Point(18, 19);
-            this.rbCreate.Name = "rbCreate";
-            this.rbCreate.Size = new System.Drawing.Size(56, 17);
-            this.rbCreate.TabIndex = 1;
-            this.rbCreate.TabStop = true;
-            this.rbCreate.Text = "Create";
-            this.rbCreate.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(666, 25);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear All";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(666, 59);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 4;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // diagram
             // 
             this.diagram.BackColor = System.Drawing.Color.White;
-            this.diagram.Location = new System.Drawing.Point(12, 165);
+            this.diagram.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.diagram.Location = new System.Drawing.Point(0, 27);
             this.diagram.Name = "diagram";
-            this.diagram.Size = new System.Drawing.Size(746, 371);
+            this.diagram.Size = new System.Drawing.Size(770, 435);
             this.diagram.TabIndex = 2;
             this.diagram.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnClick);
+            // 
+            // pMain
+            // 
+            this.pMain.BackColor = System.Drawing.Color.Transparent;
+            this.pMain.Controls.Add(this.diagram);
+            this.pMain.Controls.Add(this.menu);
+            this.pMain.Controls.Add(this.status);
+            this.pMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pMain.Location = new System.Drawing.Point(0, 64);
+            this.pMain.Margin = new System.Windows.Forms.Padding(0);
+            this.pMain.Name = "pMain";
+            this.pMain.Size = new System.Drawing.Size(770, 484);
+            this.pMain.TabIndex = 3;
+            // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Padding = new System.Windows.Forms.Padding(0);
+            this.menu.Size = new System.Drawing.Size(770, 24);
+            this.menu.TabIndex = 3;
+            this.menu.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newDiagramToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // insertToolStripMenuItem
+            // 
+            this.insertToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usecaseToolStripMenuItem,
+            this.actorToolStripMenuItem});
+            this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insertToolStripMenuItem.Text = "Insert";
+            // 
+            // usecaseToolStripMenuItem
+            // 
+            this.usecaseToolStripMenuItem.Name = "usecaseToolStripMenuItem";
+            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usecaseToolStripMenuItem.Text = "Actor";
+            this.usecaseToolStripMenuItem.Click += new System.EventHandler(this.OnInsertActorClicked);
+            // 
+            // actorToolStripMenuItem
+            // 
+            this.actorToolStripMenuItem.Name = "actorToolStripMenuItem";
+            this.actorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actorToolStripMenuItem.Text = "Usecase";
+            // 
+            // status
+            // 
+            this.status.Location = new System.Drawing.Point(0, 462);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(770, 22);
+            this.status.TabIndex = 4;
+            this.status.Text = "statusStrip1";
+            // 
+            // newDiagramToolStripMenuItem
+            // 
+            this.newDiagramToolStripMenuItem.Name = "newDiagramToolStripMenuItem";
+            this.newDiagramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newDiagramToolStripMenuItem.Text = "New Diagram";
             // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 548);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.diagram);
-            this.Controls.Add(this.gbModes);
-            this.Controls.Add(this.gbElements);
+            this.Controls.Add(this.pMain);
             this.Name = "fMain";
             this.Text = "Use Case Helper";
-            this.gbElements.ResumeLayout(false);
-            this.gbElements.PerformLayout();
-            this.gbModes.ResumeLayout(false);
-            this.gbModes.PerformLayout();
+            this.pMain.ResumeLayout(false);
+            this.pMain.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbElements;
-        private System.Windows.Forms.RadioButton rbLine;
-        private System.Windows.Forms.RadioButton rbUseCase;
-        private System.Windows.Forms.RadioButton rbActor;
-        private System.Windows.Forms.GroupBox gbModes;
-        private System.Windows.Forms.RadioButton rbSelect;
-        private System.Windows.Forms.RadioButton rbCreate;
         private uch.Diagram.Diagram diagram;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Panel pMain;
+        private System.Windows.Forms.ToolStripMenuItem newDiagramToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip status;
+        private System.Windows.Forms.ToolStripMenuItem actorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usecaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menu;
     }
 }
 

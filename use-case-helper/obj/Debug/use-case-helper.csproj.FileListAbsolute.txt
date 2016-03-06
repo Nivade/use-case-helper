@@ -9,4 +9,8 @@ C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\use_c
 C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Properties.Resources.resources
 C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\use-case-helper.csproj.GenerateResource.Cache
 C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\Assets\stickman.PNG
-C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Diagram.PropertyWindow.resources
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Diagram.UsecasePropertyForm.resources
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\Assets\stickman-selected.png
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\bin\Debug\MaterialSkin.dll
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Diagram.Objects.Actor.resources
+C:\Users\Nivade\Documents\GitHub\use-case-helper\use-case-helper\obj\Debug\uch.Diagram.Objects.Usecase.resources

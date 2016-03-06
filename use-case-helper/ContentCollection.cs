@@ -9,7 +9,7 @@ namespace uch
     public class ContentCollection
     {
 
-        private List<Element> drawables = new List<Element>(); 
+        private List<ModelObject> drawables = new List<ModelObject>(); 
 
         public ContentCollection()
         {

@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,23 +51,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentCollection.cs" />
-    <Compile Include="Diagram\Actor.cs" />
+    <Compile Include="Diagram\Objects\Actor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Diagram\Objects\Actor.Designer.cs">
+      <DependentUpon>Actor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Diagram\Diagram.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Diagram\Diagram.Designer.cs">
       <DependentUpon>Diagram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Diagram\Element.cs" />
-    <Compile Include="Diagram\IDrawable.cs" />
-    <Compile Include="Diagram\Line.cs" />
-    <Compile Include="Diagram\PropertyWindow.cs">
+    <Compile Include="Diagram\Objects\ModelObject.cs" />
+    <Compile Include="Diagram\Objects\IDrawable.cs" />
+    <Compile Include="Diagram\Objects\Relationship.cs" />
+    <Compile Include="Diagram\Objects\Usecase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Diagram\Objects\Usecase.Designer.cs">
+      <DependentUpon>Usecase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\UsecasePropertyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Diagram\PropertyWindow.Designer.cs">
-      <DependentUpon>PropertyWindow.cs</DependentUpon>
+    <Compile Include="Diagram\UsecasePropertyForm.Designer.cs">
+      <DependentUpon>UsecasePropertyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Diagram\UseCase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,8 +89,14 @@
     <EmbeddedResource Include="Diagram\Diagram.resx">
       <DependentUpon>Diagram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Diagram\PropertyWindow.resx">
-      <DependentUpon>PropertyWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Diagram\Objects\Actor.resx">
+      <DependentUpon>Actor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagram\Objects\Usecase.resx">
+      <DependentUpon>Usecase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagram\UsecasePropertyForm.resx">
+      <DependentUpon>UsecasePropertyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -91,6 +111,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,9 +126,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\stickman-selected.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\stickman.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\usecase-selected.png" />
+    <Content Include="Assets\usecase.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
