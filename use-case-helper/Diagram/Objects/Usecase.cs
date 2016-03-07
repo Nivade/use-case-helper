@@ -80,7 +80,7 @@ namespace uch.Diagram.Objects
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                parent.UnselectAll();
+                parent.Deselect();
 
                 // Select this usecase if it wasn't already.
                 Select();
@@ -117,6 +117,17 @@ namespace uch.Diagram.Objects
                 propertyForm = new UsecasePropertyForm(this, parent);
 
             propertyForm.Show();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Select();
+            ShowPropertyForm();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            parent.DestroyUsecase(this);
         }
     }
 }

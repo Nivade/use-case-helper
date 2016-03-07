@@ -15,6 +15,9 @@ namespace uch.Diagram.Objects
     public partial class Actor : UserControl
     {
 
+        /// <summary>
+        /// Represents the name of this actor.
+        /// </summary>
         public new string Name
         {
             get { return tbName.Text; }
@@ -86,7 +89,7 @@ namespace uch.Diagram.Objects
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                parent.UnselectAll();
+                parent.Deselect();
 
                 Select();
 
@@ -136,6 +139,16 @@ namespace uch.Diagram.Objects
             {
                 Select();
             }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectAll();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            parent.DestroyActor(this);
         }
     }
 }

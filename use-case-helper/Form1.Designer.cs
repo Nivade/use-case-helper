@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.diagram = new uch.Diagram.Diagram();
             this.pMain = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,19 +37,10 @@
             this.usecaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status = new System.Windows.Forms.StatusStrip();
+            this.diagram = new uch.Diagram.Diagram();
             this.pMain.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // diagram
-            // 
-            this.diagram.BackColor = System.Drawing.Color.White;
-            this.diagram.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.diagram.Location = new System.Drawing.Point(0, 27);
-            this.diagram.Name = "diagram";
-            this.diagram.Size = new System.Drawing.Size(770, 435);
-            this.diagram.TabIndex = 2;
-            this.diagram.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnClick);
             // 
             // pMain
             // 
@@ -90,6 +80,7 @@
             this.newDiagramToolStripMenuItem.Name = "newDiagramToolStripMenuItem";
             this.newDiagramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newDiagramToolStripMenuItem.Text = "New Diagram";
+            this.newDiagramToolStripMenuItem.Click += new System.EventHandler(this.OnNewDiagramClick);
             // 
             // editToolStripMenuItem
             // 
@@ -105,20 +96,20 @@
             this.usecaseToolStripMenuItem,
             this.actorToolStripMenuItem});
             this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            this.insertToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.insertToolStripMenuItem.Text = "Insert";
             // 
             // usecaseToolStripMenuItem
             // 
             this.usecaseToolStripMenuItem.Name = "usecaseToolStripMenuItem";
-            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.usecaseToolStripMenuItem.Text = "Actor";
             this.usecaseToolStripMenuItem.Click += new System.EventHandler(this.OnInsertActorClicked);
             // 
             // actorToolStripMenuItem
             // 
             this.actorToolStripMenuItem.Name = "actorToolStripMenuItem";
-            this.actorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actorToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.actorToolStripMenuItem.Text = "Usecase";
             this.actorToolStripMenuItem.Click += new System.EventHandler(this.OnInsertUsecaseClicked);
             // 
@@ -129,6 +120,16 @@
             this.status.Size = new System.Drawing.Size(770, 22);
             this.status.TabIndex = 4;
             this.status.Text = "statusStrip1";
+            // 
+            // diagram
+            // 
+            this.diagram.BackColor = System.Drawing.Color.White;
+            this.diagram.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.diagram.Location = new System.Drawing.Point(0, 27);
+            this.diagram.Name = "diagram";
+            this.diagram.Size = new System.Drawing.Size(770, 435);
+            this.diagram.TabIndex = 2;
+            this.diagram.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OnClick);
             // 
             // fMain
             // 

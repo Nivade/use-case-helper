@@ -17,8 +17,6 @@ namespace use_case_helper
     public partial class fMain : MaterialForm
     {
 
-        private UsecasePropertyForm usecasePropertyForm;
-
 
         public fMain()
         {
@@ -27,7 +25,6 @@ namespace use_case_helper
 
         private void OnClick(object sender, MouseEventArgs e)
         {
-
             
         }
 
@@ -40,6 +37,11 @@ namespace use_case_helper
         private void OnInsertUsecaseClicked(object sender, EventArgs e)
         {
             diagram.CreateUsecase();
+        }
+
+        private void OnNewDiagramClick(object sender, EventArgs e)
+        {
+            diagram.Clear();
         }
     }
 }
