@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using uch.Diagram.Objects;
 
@@ -42,7 +43,7 @@ namespace uch.Diagram
             {
                 if (!usecase.Relationships.Contains(a))
                 {
-                    cbActors.Items.Add(a);
+                    cbActors.Items.Add(a.ToString());
                     cbActors.Refresh();
                 }
             }
@@ -79,6 +80,13 @@ namespace uch.Diagram
             usecase.Beschrijving = tbBeschrijving.Text;
             usecase.Uitzonderingen = tbUitzonderingen.Text;
             usecase.Resultaat = tbResultaat.Text;
+        }
+
+        private void ActorSelected(object sender, EventArgs e)
+        {
+            Actor actor = diagram.Actors.First(x => x.Name == cbActors.SelectedItem.ToString());
+            diagram.CreateRelationship(actor, usecase);
+
         }
     }
 }

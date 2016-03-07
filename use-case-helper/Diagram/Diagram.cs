@@ -22,6 +22,7 @@ namespace uch.Diagram
         List<ModelObject> elements = new List<ModelObject>();
         List<Actor> actors = new List<Actor>();
         List<Usecase> usecases = new List<Usecase>(); 
+        List<Relationship> relationships = new List<Relationship>();
 
         public Diagram()
         {
@@ -56,6 +57,27 @@ namespace uch.Diagram
                 c.Unselect();
 
             usecase.Select();
+        }
+
+
+
+        public void CreateRelationship(Actor actor, Usecase usecase)
+        {
+            if (relationships.Count > 0)
+                foreach (Relationship r in relationships)
+                {
+
+                    if (r.Actor != actor && r.Usecase != usecase)
+                    {
+                        Relationship relationship = new Relationship(actor, usecase);
+                        relationships.Add(relationship);
+                    }
+                }
+            else
+            {
+                Relationship relationship = new Relationship(actor, usecase);
+                relationships.Add(relationship);
+            }
         }
 
 
@@ -104,6 +126,14 @@ namespace uch.Diagram
 
             foreach (Usecase c in usecases)
                 c.Unselect();
+        }
+
+        private void OnPaint(object sender, PaintEventArgs e)
+        {
+            foreach (Relationship r in relationships)
+            {
+                e.Graphics.DrawLine(new Pen(Color.Black), r.Actor.Location, r.Usecase.Location );
+            }
         }
     }
 }

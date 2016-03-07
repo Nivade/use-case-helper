@@ -4,29 +4,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using uch.Diagram.Objects;
+
 
 namespace uch.Diagram
 {
-    public class Relationship : ModelObject, IDrawable
+    public class Relationship
     {
 
-        public Relationship(Point start, Point end)
+        public Actor Actor { get; private set; }
+
+
+        public Usecase Usecase { get; private set; }
+
+
+
+        public Relationship(Actor actor, Usecase usecase)
         {
-            
-        }
-
-
-
-        public override bool Contains(Point point)
-        {
-            return base.Contains(point);
-        }
-
-
-
-        public void Draw(Graphics graphics)
-        {
-            
+            this.Actor = actor;
+            this.Usecase = usecase;
         }
 
     }

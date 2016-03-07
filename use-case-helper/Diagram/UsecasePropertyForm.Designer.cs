@@ -206,6 +206,7 @@
             this.cbActors.Name = "cbActors";
             this.cbActors.Size = new System.Drawing.Size(114, 21);
             this.cbActors.TabIndex = 15;
+            this.cbActors.SelectedIndexChanged += new System.EventHandler(this.ActorSelected);
             // 
             // UsecasePropertyForm
             // 

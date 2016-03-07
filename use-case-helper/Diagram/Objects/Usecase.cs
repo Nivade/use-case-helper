@@ -87,6 +87,8 @@ namespace uch.Diagram.Objects
             {
                 Left = e.X + Left - MouseDownLocation.X;
                 Top = e.Y + Top - MouseDownLocation.Y;
+
+                parentDiagram.Refresh();
             }
         }
 
