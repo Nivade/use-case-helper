@@ -36,5 +36,10 @@ namespace use_case_helper
             diagram.CreateActor();
             
         }
+
+        private void OnInsertUsecaseClicked(object sender, EventArgs e)
+        {
+            diagram.CreateUsecase();
+        }
     }
 }

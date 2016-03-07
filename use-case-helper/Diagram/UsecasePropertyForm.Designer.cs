@@ -42,6 +42,8 @@
             this.lBeschrijving = new System.Windows.Forms.Label();
             this.lUitzonderingen = new System.Windows.Forms.Label();
             this.lResultaat = new System.Windows.Forms.Label();
+            this.btSave = new MaterialSkin.Controls.MaterialFlatButton();
+            this.cbActors = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // tbNaam
@@ -70,7 +72,7 @@
             this.tbActoren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbActoren.Location = new System.Drawing.Point(150, 72);
             this.tbActoren.Name = "tbActoren";
-            this.tbActoren.Size = new System.Drawing.Size(361, 24);
+            this.tbActoren.Size = new System.Drawing.Size(241, 24);
             this.tbActoren.TabIndex = 2;
             // 
             // tbAannamen
@@ -181,11 +183,37 @@
             this.lResultaat.TabIndex = 13;
             this.lResultaat.Text = "Resultaat:";
             // 
+            // btSave
+            // 
+            this.btSave.AutoSize = true;
+            this.btSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btSave.Depth = 0;
+            this.btSave.Location = new System.Drawing.Point(243, 570);
+            this.btSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btSave.Name = "btSave";
+            this.btSave.Primary = false;
+            this.btSave.Size = new System.Drawing.Size(46, 36);
+            this.btSave.TabIndex = 14;
+            this.btSave.Text = "Save";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.Save);
+            // 
+            // cbActors
+            // 
+            this.cbActors.FormattingEnabled = true;
+            this.cbActors.Location = new System.Drawing.Point(397, 72);
+            this.cbActors.Name = "cbActors";
+            this.cbActors.Size = new System.Drawing.Size(114, 21);
+            this.cbActors.TabIndex = 15;
+            // 
             // UsecasePropertyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 562);
+            this.ClientSize = new System.Drawing.Size(523, 621);
+            this.Controls.Add(this.cbActors);
+            this.Controls.Add(this.btSave);
             this.Controls.Add(this.lResultaat);
             this.Controls.Add(this.lUitzonderingen);
             this.Controls.Add(this.lBeschrijving);
@@ -223,5 +251,7 @@
         private System.Windows.Forms.Label lBeschrijving;
         private System.Windows.Forms.Label lUitzonderingen;
         private System.Windows.Forms.Label lResultaat;
+        private MaterialSkin.Controls.MaterialFlatButton btSave;
+        private System.Windows.Forms.ComboBox cbActors;
     }
 }

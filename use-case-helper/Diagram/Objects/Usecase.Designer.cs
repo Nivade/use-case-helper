@@ -42,7 +42,6 @@
             this.tbName.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.tbName.Multiline = true;
             this.tbName.Name = "tbName";
-            this.tbName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tbName.Size = new System.Drawing.Size(170, 17);
             this.tbName.TabIndex = 0;
             this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -66,6 +65,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(190, 70);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.DoubleClick += new System.EventHandler(this.DoubleClick);
+            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BeginDrag);
+            this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag);
             // 
             // Usecase
             // 
@@ -78,6 +80,8 @@
             this.DoubleBuffered = true;
             this.Name = "Usecase";
             this.Size = new System.Drawing.Size(190, 70);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BeginDrag);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

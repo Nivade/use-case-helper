@@ -16,6 +16,9 @@ namespace uch.Diagram
 
     public partial class Diagram : UserControl
     {
+        public List<Actor> Actors { get { return actors; } }
+
+
         List<ModelObject> elements = new List<ModelObject>();
         List<Actor> actors = new List<Actor>();
         List<Usecase> usecases = new List<Usecase>(); 
@@ -51,6 +54,8 @@ namespace uch.Diagram
 
             foreach (Usecase c in usecases)
                 c.Unselect();
+
+            usecase.Select();
         }
 
 
@@ -92,20 +97,13 @@ namespace uch.Diagram
             }
         }
 
-        private void OnPaint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.Clear(Color.White);
-
-            foreach (IDrawable element in elements)
-            {
-                element.Draw(e.Graphics);
-            }
-        }
-
         private void OnClick(object sender, EventArgs e)
         {
             foreach (Actor a in actors)
                 a.Unselect();
+
+            foreach (Usecase c in usecases)
+                c.Unselect();
         }
     }
 }

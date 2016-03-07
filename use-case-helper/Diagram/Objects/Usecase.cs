@@ -31,6 +31,8 @@ namespace uch.Diagram.Objects
 
         public string Resultaat { get; set; } = string.Empty;
 
+        public List<Actor> Relationships { get; set; } = new List<Actor>(); 
+
         private Diagram parentDiagram;
         private bool selected = false;
         private UsecasePropertyForm propertyForm;
@@ -39,6 +41,9 @@ namespace uch.Diagram.Objects
         {
             InitializeComponent();
             this.parentDiagram = parentDiagram;
+
+            propertyForm = new UsecasePropertyForm(this, parentDiagram);
+            propertyForm.Show();
         }
 
 
@@ -65,5 +70,32 @@ namespace uch.Diagram.Objects
             Size size = TextRenderer.MeasureText(tbName.Text, tbName.Font);
             tbName.Width = size.Width;
         }
+
+        private Point MouseDownLocation;
+
+        private void BeginDrag(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                MouseDownLocation = e.Location;
+            }
+        }
+
+        private void Drag(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                Left = e.X + Left - MouseDownLocation.X;
+                Top = e.Y + Top - MouseDownLocation.Y;
+            }
+        }
+
+        private void DoubleClick(object sender, EventArgs e)
+        {
+            propertyForm = new UsecasePropertyForm(this, parentDiagram);
+            propertyForm.Show();
+        }
+
+        
     }
 }

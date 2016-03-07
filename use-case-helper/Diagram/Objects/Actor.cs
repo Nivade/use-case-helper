@@ -89,5 +89,19 @@ namespace uch.Diagram.Objects
                 Top = e.Y + Top - MouseDownLocation.Y;
             }
         }
+
+
+
+        /// <summary>
+        /// Returns a <see cref="T:System.String"/> containing the name of the <see cref="T:System.ComponentModel.Component"/>, if any. This method should not be overridden.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="T:System.String"/> containing the name of the <see cref="T:System.ComponentModel.Component"/>, if any, or null if the <see cref="T:System.ComponentModel.Component"/> is unnamed.
+        /// </returns>
+        public override string ToString()
+        {
+            return "asdfklj";
+        }
+
     }
 }

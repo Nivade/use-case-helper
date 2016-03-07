@@ -38,7 +38,6 @@
             this.Name = "Diagram";
             this.Size = new System.Drawing.Size(671, 392);
             this.Click += new System.EventHandler(this.OnClick);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             this.ResumeLayout(false);
 
         }

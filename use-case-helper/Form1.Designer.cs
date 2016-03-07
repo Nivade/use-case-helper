@@ -32,12 +32,12 @@
             this.pMain = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newDiagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usecaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status = new System.Windows.Forms.StatusStrip();
-            this.newDiagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pMain.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,12 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newDiagramToolStripMenuItem
+            // 
+            this.newDiagramToolStripMenuItem.Name = "newDiagramToolStripMenuItem";
+            this.newDiagramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newDiagramToolStripMenuItem.Text = "New Diagram";
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,6 +120,7 @@
             this.actorToolStripMenuItem.Name = "actorToolStripMenuItem";
             this.actorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.actorToolStripMenuItem.Text = "Usecase";
+            this.actorToolStripMenuItem.Click += new System.EventHandler(this.OnInsertUsecaseClicked);
             // 
             // status
             // 
@@ -122,12 +129,6 @@
             this.status.Size = new System.Drawing.Size(770, 22);
             this.status.TabIndex = 4;
             this.status.Text = "statusStrip1";
-            // 
-            // newDiagramToolStripMenuItem
-            // 
-            this.newDiagramToolStripMenuItem.Name = "newDiagramToolStripMenuItem";
-            this.newDiagramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newDiagramToolStripMenuItem.Text = "New Diagram";
             // 
             // fMain
             // 
