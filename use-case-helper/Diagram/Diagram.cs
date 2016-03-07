@@ -16,11 +16,18 @@ namespace uch.Diagram
 
     public partial class Diagram : UserControl
     {
-        public List<Actor> Actors { get { return actors; } }
-        public List<Relationship> Relationships { get { return relationships; } }
+        public List<Actor> Actors => actors;
 
 
-        List<ModelObject> elements = new List<ModelObject>();
+        public List<Relationship> Relationships => relationships;
+
+
+        public List<Usecase> Usecases => usecases;
+
+        public Pen PenDefault { get; private set; } = new Pen(Color.Black);
+        public Pen PenSelection { get; private set; } = new Pen(Color.Red);
+
+
         List<Actor> actors = new List<Actor>();
         List<Usecase> usecases = new List<Usecase>(); 
         List<Relationship> relationships = new List<Relationship>();
@@ -39,9 +46,10 @@ namespace uch.Diagram
             actors.Add(actor);
             Controls.Add(actor);
 
-            foreach (Actor a in actors)
-                a.Unselect();
+            // Unselect everything.
+            UnselectAll();
 
+            // Focus on the new actor.
             actor.SelectAll();
         }
 
@@ -54,8 +62,7 @@ namespace uch.Diagram
             usecases.Add(usecase);
             Controls.Add(usecase);
 
-            foreach (Usecase c in usecases)
-                c.Unselect();
+            UnselectAll();
 
             usecase.Select();
         }
@@ -64,64 +71,41 @@ namespace uch.Diagram
 
         public void CreateRelationship(Actor actor, Usecase usecase)
         {
-            if (relationships.Count > 0)
-                foreach (Relationship r in relationships)
-                {
-
-                    if (r.Actor != actor || r.Usecase != usecase)
-                    {
-                        Relationship relationship = new Relationship(actor, usecase);
-                        relationships.Add(relationship);
-                        break;
-                    }
-                }
-            else
+            // If the relationship doesn't exist already.
+            if (relationships.Count(x => x.Actor == actor && x.Usecase == usecase) < 1)
             {
-                Relationship relationship = new Relationship(actor, usecase);
-                relationships.Add(relationship);
+                relationships.Add(new Relationship(actor, usecase));
             }
         }
 
 
-        /// <summary>
-        /// Adds the given element to the diagram.
-        /// </summary>
-        /// <param name="modelObject"> The element to add. </param>
-        public void Create(ModelObject modelObject)
+
+        public void DestroyRelationship(Actor actor, Usecase usecase)
         {
-            if (modelObject == null)
-            {
-                Console.WriteLine("Diagram::Create: Element is null");
-                return;
-            }
-
-            elements.Add(modelObject);
-
-            Refresh();
-
-            modelObject.PropertyChanged += (sender, args) => Refresh();
+            relationships.RemoveAll(x => x.Actor == actor && x.Usecase == usecase);
         }
 
 
 
-        public void Select(Point point)
+        public IEnumerable<Relationship> FindRelationships(Actor actor)
         {
+            return relationships.Where(x => x.Actor == actor);
+        }
 
-           
-            foreach (ModelObject e in elements)
-            {
-                if (e.IsSelected)
-                    e.IsSelected = false;
-
-                if (e.Contains(point))
-                {
-                    e.IsSelected = true;
-                    Refresh();
-                }
-            }
+        public IEnumerable<Relationship> FindRelationships(Usecase usecase)
+        {
+            return relationships.Where(x => x.Usecase == usecase);
         }
 
         private void OnClick(object sender, EventArgs e)
+        {
+            // Clicking anywhere in the diagram other than entities means deselecting them.
+            UnselectAll();
+        }
+
+
+
+        public void UnselectAll()
         {
             foreach (Actor a in actors)
                 a.Unselect();
@@ -132,8 +116,11 @@ namespace uch.Diagram
 
         private void OnPaint(object sender, PaintEventArgs e)
         {
+
+            // Draw a line from the 
             foreach (Relationship r in relationships)
             {
+                // Calculate the actors center position.
                 Point actorCenter = r.Actor.Location;
                 actorCenter.X += r.Actor.BackgroundImage.Width / 2;
                 actorCenter.Y += r.Actor.BackgroundImage.Height / 2;

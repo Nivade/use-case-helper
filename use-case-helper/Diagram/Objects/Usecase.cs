@@ -33,17 +33,21 @@ namespace uch.Diagram.Objects
 
         public List<Actor> Relationships { get; set; } = new List<Actor>(); 
 
-        private Diagram parentDiagram;
+        private readonly Diagram parent;
         private bool selected = false;
         private UsecasePropertyForm propertyForm;
 
-        public Usecase(Diagram parentDiagram)
+        /// <summary>
+        /// Used for dragging, represents the initial mouse down position.
+        /// </summary>
+        private Point mouseDownLocation;
+
+        public Usecase(Diagram parent)
         {
             InitializeComponent();
-            this.parentDiagram = parentDiagram;
+            this.parent = parent;
 
-            propertyForm = new UsecasePropertyForm(this, parentDiagram);
-            propertyForm.Show();
+            ShowPropertyForm();
         }
 
 
@@ -60,44 +64,59 @@ namespace uch.Diagram.Objects
             BackgroundImage = Resources.usecase;
         }
 
-        public void SelectAll()
-        {
-            Select();
-        }
-
         private void OnTbNameTextChanged(object sender, EventArgs e)
         {
             Size size = TextRenderer.MeasureText(tbName.Text, tbName.Font);
             tbName.Width = size.Width;
         }
 
-        private Point MouseDownLocation;
 
+        /// <summary>
+        /// Sets the initial mouse down position.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BeginDrag(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                MouseDownLocation = e.Location;
+                parent.UnselectAll();
+
+                // Select this usecase if it wasn't already.
+                Select();
+
+                mouseDownLocation = e.Location;
             }
         }
 
+
+        /// <summary>
+        /// Mouse this actor with the mouse as long as the left mouse button is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Drag(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                Left = e.X + Left - MouseDownLocation.X;
-                Top = e.Y + Top - MouseDownLocation.Y;
+                Left = e.X + Left - mouseDownLocation.X;
+                Top = e.Y + Top - mouseDownLocation.Y;
 
-                parentDiagram.Refresh();
+                parent.Refresh();
             }
         }
 
         private void DoubleClick(object sender, EventArgs e)
         {
-            propertyForm = new UsecasePropertyForm(this, parentDiagram);
-            propertyForm.Show();
+            ShowPropertyForm();
         }
 
-        
+        private void ShowPropertyForm()
+        {
+            if (propertyForm == null || propertyForm.IsDisposed)
+                propertyForm = new UsecasePropertyForm(this, parent);
+
+            propertyForm.Show();
+        }
     }
 }

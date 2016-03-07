@@ -197,7 +197,7 @@
             this.btSave.TabIndex = 14;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = true;
-            this.btSave.Click += new System.EventHandler(this.Save);
+            this.btSave.Click += new System.EventHandler(this.OnbtnSaveClick);
             // 
             // cbActors
             // 
@@ -206,7 +206,7 @@
             this.cbActors.Name = "cbActors";
             this.cbActors.Size = new System.Drawing.Size(114, 21);
             this.cbActors.TabIndex = 15;
-            this.cbActors.SelectedIndexChanged += new System.EventHandler(this.ActorSelected);
+            this.cbActors.SelectedIndexChanged += new System.EventHandler(this.OncbActorsSelectionChanged);
             // 
             // UsecasePropertyForm
             // 

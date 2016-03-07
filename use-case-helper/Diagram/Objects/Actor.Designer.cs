@@ -66,6 +66,7 @@
             this.DoubleClick += new System.EventHandler(this.OnDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BeginDrag);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
             this.ResumeLayout(false);
 
         }

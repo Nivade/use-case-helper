@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContentCollection.cs" />
     <Compile Include="Diagram\Objects\Actor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,8 +62,6 @@
     <Compile Include="Diagram\Diagram.Designer.cs">
       <DependentUpon>Diagram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Diagram\Objects\ModelObject.cs" />
-    <Compile Include="Diagram\Objects\IDrawable.cs" />
     <Compile Include="Diagram\Objects\Relationship.cs" />
     <Compile Include="Diagram\Objects\Usecase.cs">
       <SubType>UserControl</SubType>

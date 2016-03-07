@@ -21,13 +21,19 @@ namespace uch.Diagram.Objects
             set { tbName.Text = value; }
         } 
 
-        private bool selected = false;
-        private Diagram parentDiagram;
+        private bool selected;
+        private bool dragging;
+        private readonly Diagram parent;
 
-        public Actor(Diagram parentDiagram)
+        /// <summary>
+        /// Used for dragging, represents the initial mouse down position.
+        /// </summary>
+        private Point mouseDownLocation;
+
+        public Actor(Diagram parent)
         {
             InitializeComponent();
-            this.parentDiagram = parentDiagram;
+            this.parent = parent;
         }
 
         private void OnDoubleClick(object sender, EventArgs e)
@@ -37,12 +43,14 @@ namespace uch.Diagram.Objects
 
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
+            // Confirm changes if enter is pressed.
             if (e.KeyCode == Keys.Enter)
             {
-                this.Name = tbName.Text;
+                Name = tbName.Text;
                 Unselect();
             }
         }
+
 
         public void Unselect()
         {
@@ -50,8 +58,6 @@ namespace uch.Diagram.Objects
             tbName.Enabled = false;
             BackgroundImage = Resources.stickman;
         }
-
-
 
         public new void Select()
         {
@@ -71,24 +77,39 @@ namespace uch.Diagram.Objects
 
 
 
-        private Point MouseDownLocation;
-
+        /// <summary>
+        /// Sets the initial mouse down position.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BeginDrag(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                MouseDownLocation = e.Location;
+                parent.UnselectAll();
+
+                Select();
+
+                mouseDownLocation = e.Location;
             }
         }
 
+
+        /// <summary>
+        /// Mouse this actor with the mouse as long as the left mouse button is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Drag(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                Left = e.X + Left - MouseDownLocation.X;
-                Top = e.Y + Top - MouseDownLocation.Y;
+                Left = e.X + Left - mouseDownLocation.X;
+                Top = e.Y + Top - mouseDownLocation.Y;
 
-                parentDiagram.Refresh();
+                parent.Refresh();
+
+                dragging = true;
             }
         }
 
@@ -105,5 +126,16 @@ namespace uch.Diagram.Objects
             return Name;
         }
 
+        private void OnMouseUp(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                dragging = false;
+            }
+            else
+            {
+                Select();
+            }
+        }
     }
 }
