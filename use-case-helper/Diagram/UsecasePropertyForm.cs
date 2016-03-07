@@ -34,7 +34,7 @@ namespace uch.Diagram
             tbUitzonderingen.Text = usecase.Uitzonderingen;
             tbResultaat.Text = usecase.Resultaat;
 
-            foreach (Actor a in usecase.Relationships)
+            foreach (Actor a in diagram.R)
             {
                 tbActoren.Text += a.ToString() + ", ";
             }
@@ -80,6 +80,7 @@ namespace uch.Diagram
             usecase.Beschrijving = tbBeschrijving.Text;
             usecase.Uitzonderingen = tbUitzonderingen.Text;
             usecase.Resultaat = tbResultaat.Text;
+            Close();
         }
 
         private void ActorSelected(object sender, EventArgs e)

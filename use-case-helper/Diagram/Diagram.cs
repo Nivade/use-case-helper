@@ -17,6 +17,7 @@ namespace uch.Diagram
     public partial class Diagram : UserControl
     {
         public List<Actor> Actors { get { return actors; } }
+        public List<Relationship> Relationships { get { return relationships; } }
 
 
         List<ModelObject> elements = new List<ModelObject>();
@@ -67,10 +68,11 @@ namespace uch.Diagram
                 foreach (Relationship r in relationships)
                 {
 
-                    if (r.Actor != actor && r.Usecase != usecase)
+                    if (r.Actor != actor || r.Usecase != usecase)
                     {
                         Relationship relationship = new Relationship(actor, usecase);
                         relationships.Add(relationship);
+                        break;
                     }
                 }
             else
@@ -132,7 +134,15 @@ namespace uch.Diagram
         {
             foreach (Relationship r in relationships)
             {
-                e.Graphics.DrawLine(new Pen(Color.Black), r.Actor.Location, r.Usecase.Location );
+                Point actorCenter = r.Actor.Location;
+                actorCenter.X += r.Actor.BackgroundImage.Width / 2;
+                actorCenter.Y += r.Actor.BackgroundImage.Height / 2;
+
+                Point usecaseCenter = r.Usecase.Location;
+                usecaseCenter.X += r.Usecase.BackgroundImage.Width / 2;
+                usecaseCenter.Y += r.Usecase.BackgroundImage.Height / 2;
+
+                e.Graphics.DrawLine(new Pen(Color.Black), actorCenter, usecaseCenter );
             }
         }
     }
