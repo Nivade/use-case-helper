@@ -8,5 +8,6 @@ namespace UseCaseHelper.Domain
 {
     public class UseCase : Element
     {
+        public IEnumerable<Actor> Actors { get; set; }
     }
 }

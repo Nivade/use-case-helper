@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7AF7E8CF-A90C-4F59-966C-47E3CE75D1DC}</ProjectGuid>
+    <ProjectGuid>{2B793D5E-A427-4C57-B18F-25A5921EFFC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UseCaseHelper.Domain</RootNamespace>
-    <AssemblyName>UseCaseHelper.Domain</AssemblyName>
+    <RootNamespace>UseCaseHelper.Controls</RootNamespace>
+    <AssemblyName>UseCaseHelper.Controls</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,10 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actor.cs" />
-    <Compile Include="Element.cs" />
-    <Compile Include="UseCase.cs" />
+    <Compile Include="Diagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Diagram.Designer.cs">
+      <DependentUpon>Diagram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UseCaseHelper.Domain\UseCaseHelper.Domain.csproj">
+      <Project>{7af7e8cf-a90c-4f59-966c-47e3ce75d1dc}</Project>
+      <Name>UseCaseHelper.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Diagram.resx">
+      <DependentUpon>Diagram.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
