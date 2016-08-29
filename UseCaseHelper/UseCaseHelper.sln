@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCaseHelper", "UseCaseHel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCaseHelper.Domain", "..\UseCaseHelper.Domain\UseCaseHelper.Domain.csproj", "{7AF7E8CF-A90C-4F59-966C-47E3CE75D1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCaseHelper.Controls", "..\UseCaseHelper.Controls\UseCaseHelper.Controls.csproj", "{2B793D5E-A427-4C57-B18F-25A5921EFFC8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{7AF7E8CF-A90C-4F59-966C-47E3CE75D1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF7E8CF-A90C-4F59-966C-47E3CE75D1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF7E8CF-A90C-4F59-966C-47E3CE75D1DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B793D5E-A427-4C57-B18F-25A5921EFFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B793D5E-A427-4C57-B18F-25A5921EFFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B793D5E-A427-4C57-B18F-25A5921EFFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B793D5E-A427-4C57-B18F-25A5921EFFC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

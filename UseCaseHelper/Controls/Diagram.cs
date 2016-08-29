@@ -24,7 +24,10 @@ namespace UseCaseHelper.Controls
 
         public Actor CreateActor()
         {
-            return null;
+            Actor actor = new Actor();
+            Controls.Add(actor);
+
+            return actor;
 
         }
 
