@@ -12,8 +12,10 @@ namespace UseCaseHelper.Controls
 {
     public partial class Actor : Element
     {
-
-        public string Name { get; set; }
+        [Category("Actor Settings")]
+        [Description("Specifies the role of the actor.")]
+        [Browsable(true)]
+        public string Role { get; set; }
 
 
         public Actor(Diagram diagram) : base(diagram)
