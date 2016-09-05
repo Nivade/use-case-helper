@@ -48,6 +48,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.tbName);
             this.Name = "Actor";
+            this.Original = global::UseCaseHelper.Properties.Resources.actor;
+            this.Selected = global::UseCaseHelper.Properties.Resources.actor_click;
             this.Size = new System.Drawing.Size(99, 140);
             this.ResumeLayout(false);
             this.PerformLayout();

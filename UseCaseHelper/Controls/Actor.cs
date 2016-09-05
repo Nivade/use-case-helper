@@ -15,9 +15,17 @@ namespace UseCaseHelper.Controls
 
         public string Name { get; set; }
 
+
         public Actor(Diagram diagram) : base(diagram)
         {
             InitializeComponent();
+        }
+
+        public override void Select()
+        {
+            base.Select();
+
+            tbName.Focus();
         }
     }
 }

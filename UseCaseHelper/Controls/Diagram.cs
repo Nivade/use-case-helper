@@ -14,17 +14,26 @@ namespace UseCaseHelper.Controls
     public partial class Diagram : UserControl
     {
 
-        private List<UserControl> elements = new List<UserControl>();
+        private List<Element> elements = new List<Element>();
 
 
         public Diagram()
         {
             InitializeComponent();
+
+            Actor a = new Actor(this);
+
+            elements.Add(a);
+            Controls.Add(a);
+            a.Select();
+
+
         }
 
-        public UseCase CreateUseCase()
+        private void OnClick(object sender, EventArgs e)
         {
-            return null;
+            this.Focus();
+            elements.ForEach(x => x.Deselect());
         }
     }
 }
