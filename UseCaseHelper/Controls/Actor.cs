@@ -25,7 +25,15 @@ namespace UseCaseHelper.Controls
         {
             base.Activate();
 
+            tbName.Enabled = true;
             tbName.Focus();
+        }
+
+        public override void Deactivate()
+        {
+            tbName.Enabled = false;
+
+            base.Deactivate();
         }
     }
 }

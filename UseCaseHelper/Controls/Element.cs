@@ -18,6 +18,8 @@ namespace UseCaseHelper.Controls
         /// </summary>
         protected Diagram diagram;
 
+        protected Point previousLocation;
+        protected bool active = false;
 
         /// <summary>
         /// Specifies the original background image of the element.
@@ -54,6 +56,7 @@ namespace UseCaseHelper.Controls
         public virtual void Activate()
         {
             Focus();
+            active = true;
             BackgroundImage = SelectedBackgroundImage;
         }
 
@@ -64,9 +67,30 @@ namespace UseCaseHelper.Controls
         public virtual void Deactivate()
         {
             InvokeLostFocus(this, null);
+            active = false;
             BackgroundImage = OriginalBackgroundImage;
         }
 
+        protected void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            Activate();
+            previousLocation = e.Location;
+            Cursor = Cursors.Hand;
+        }
 
+        protected void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            if (!active)
+                return;
+            var newLocation = Location;
+            newLocation.Offset(e.Location.X - previousLocation.X, e.Location.Y - previousLocation.Y);
+            Location = newLocation;
+        }
+
+        protected void OnMouseUp(object sender, MouseEventArgs e)
+        {
+            active = false;
+            Cursor = Cursors.Default;
+        }
     }
 }

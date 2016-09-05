@@ -21,19 +21,18 @@ namespace UseCaseHelper.Controls
         {
             InitializeComponent();
 
-            Actor a = new Actor(this);
+            Element a = new Actor(this);
 
             elements.Add(a);
             Controls.Add(a);
-            a.Activate();
 
 
         }
 
         private void OnClick(object sender, EventArgs e)
         {
-            this.Focus();
             elements.ForEach(x => x.Deactivate());
+            Focus();
         }
     }
 }
