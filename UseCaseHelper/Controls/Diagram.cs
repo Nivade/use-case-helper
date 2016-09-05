@@ -21,12 +21,15 @@ namespace UseCaseHelper.Controls
         {
             InitializeComponent();
 
-            Element a = new Actor(this);
+            ActorControl a = new ActorControl(this);
+            UseCaseControl b = new UseCaseControl(this);
 
             elements.Add(a);
+            elements.Add(b);
             Controls.Add(a);
+            Controls.Add(b);
 
-
+            
         }
 
         private void OnClick(object sender, EventArgs e)

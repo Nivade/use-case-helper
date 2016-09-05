@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Actor.cs">
+    <Compile Include="Controls\ActorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Actor.Designer.cs">
-      <DependentUpon>Actor.cs</DependentUpon>
+    <Compile Include="Controls\ActorControl.Designer.cs">
+      <DependentUpon>ActorControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Diagram.cs">
       <SubType>UserControl</SubType>
@@ -64,11 +64,11 @@
     <Compile Include="Controls\Element.Designer.cs">
       <DependentUpon>Element.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\UseCase.cs">
+    <Compile Include="Controls\UseCaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\UseCase.Designer.cs">
-      <DependentUpon>UseCase.cs</DependentUpon>
+    <Compile Include="Controls\UseCaseControl.Designer.cs">
+      <DependentUpon>UseCaseControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\Actor.resx">
-      <DependentUpon>Actor.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ActorControl.resx">
+      <DependentUpon>ActorControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Diagram.resx">
       <DependentUpon>Diagram.cs</DependentUpon>
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="Controls\Element.resx">
       <DependentUpon>Element.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UseCase.resx">
-      <DependentUpon>UseCase.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UseCaseControl.resx">
+      <DependentUpon>UseCaseControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -129,6 +129,8 @@
     <Content Include="Graphics\actor_click.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Graphics\usecase_click.png" />
+    <None Include="Graphics\usecase.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

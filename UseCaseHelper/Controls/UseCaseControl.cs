@@ -7,19 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UseCaseHelper.Domain;
 
 namespace UseCaseHelper.Controls
 {
-    public partial class UseCase : Element
+    public partial class UseCaseControl : Element
     {
-        public UseCase()
+
+        public UseCase UseCase => new UseCase();
+
+        public UseCaseControl(Diagram diagram) : base(diagram)
         {
             InitializeComponent();
-        }
-
-        public UseCase(Diagram diagram) : this()
-        {
-            this.diagram = diagram;
         }
     }
 }

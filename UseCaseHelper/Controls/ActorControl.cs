@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UseCaseHelper.Domain;
 
 namespace UseCaseHelper.Controls
 {
-    public partial class Actor : Element
+    public partial class ActorControl : Element
     {
-        [Category("Actor Settings")]
+        private Actor actor;
+
+        [Category("ActorControl Settings")]
         [Description("Specifies the role of the actor.")]
         [Browsable(true)]
         public string Role { get; set; }
 
 
-        public Actor(Diagram diagram) : base(diagram)
+        public ActorControl(Diagram diagram) : base(diagram)
         {
             InitializeComponent();
         }
