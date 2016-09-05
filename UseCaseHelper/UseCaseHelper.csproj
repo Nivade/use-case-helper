@@ -64,6 +64,12 @@
     <Compile Include="Controls\Element.Designer.cs">
       <DependentUpon>Element.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UseCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UseCase.Designer.cs">
+      <DependentUpon>UseCase.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Element.resx">
       <DependentUpon>Element.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UseCase.resx">
+      <DependentUpon>UseCase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
