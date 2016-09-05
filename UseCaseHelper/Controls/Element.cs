@@ -1,31 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UseCaseHelper.Controls;
 
-namespace UseCaseHelper
+namespace UseCaseHelper.Controls
 {
-    public partial class MainForm : Form
+    public partial class Element : UserControl
     {
+        protected Diagram diagram;
 
-
-
-        public MainForm()
+        public Element()
         {
             InitializeComponent();
         }
 
-        private void CreateActorClick(object sender, EventArgs e)
+        public Element(Diagram diagram) : this()
         {
-            Diagram diagram = (Diagram)Controls.Find("diagram", true).First();
+            this.diagram = diagram;
         }
-
-
     }
 }

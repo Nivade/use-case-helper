@@ -48,7 +48,6 @@
             this.addActorToolStripMenuItem.Name = "addActorToolStripMenuItem";
             this.addActorToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.addActorToolStripMenuItem.Text = "Add Actor";
-            this.addActorToolStripMenuItem.Click += new System.EventHandler(this.AddActorDiagramContextMenuClick);
             // 
             // addUseCaseToolStripMenuItem
             // 

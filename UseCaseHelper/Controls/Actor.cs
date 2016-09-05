@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace UseCaseHelper.Controls
 {
-    public partial class Actor : UserControl
+    public partial class Actor : Element
     {
-        public Actor()
+
+        public string Name { get; set; }
+
+        public Actor(Diagram diagram) : base(diagram)
         {
             InitializeComponent();
         }

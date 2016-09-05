@@ -22,25 +22,9 @@ namespace UseCaseHelper.Controls
             InitializeComponent();
         }
 
-        public Actor CreateActor(int x = 0, int y = 0)
-        {
-            Actor actor = new Actor();
-            actor.Location = new Point(x, y);
-            Controls.Add(actor);
-            elements.Add(actor);
-            actor.Focus();
-            return actor;
-        }
-
         public UseCase CreateUseCase()
         {
             return null;
-        }
-
-        private void AddActorDiagramContextMenuClick(object sender, EventArgs e)
-        {
-            var relativeMousePosition = PointToClient(new Point(MousePosition.X, MousePosition.Y));
-            CreateActor(relativeMousePosition.X, relativeMousePosition.Y);
         }
     }
 }
