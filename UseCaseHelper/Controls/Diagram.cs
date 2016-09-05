@@ -28,7 +28,6 @@ namespace UseCaseHelper.Controls
             elements.Add(b);
             Controls.Add(a);
             Controls.Add(b);
-
             
         }
 

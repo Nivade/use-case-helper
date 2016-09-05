@@ -70,6 +70,12 @@
     <Compile Include="Controls\UseCaseControl.Designer.cs">
       <DependentUpon>UseCaseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UseCaseProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UseCaseProperties.Designer.cs">
+      <DependentUpon>UseCaseProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UseCaseControl.resx">
       <DependentUpon>UseCaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UseCaseProperties.resx">
+      <DependentUpon>UseCaseProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -39,6 +39,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(100, 19);
             this.tbName.TabIndex = 0;
+            this.tbName.Validated += new System.EventHandler(this.OnValidated);
             // 
             // ActorControl
             // 

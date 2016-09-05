@@ -13,13 +13,7 @@ namespace UseCaseHelper.Controls
 {
     public partial class ActorControl : Element
     {
-        private Actor actor;
-
-        [Category("ActorControl Settings")]
-        [Description("Specifies the role of the actor.")]
-        [Browsable(true)]
-        public string Role { get; set; }
-
+        public Actor Actor => new Actor();
 
         public ActorControl(Diagram diagram) : base(diagram)
         {
@@ -39,6 +33,11 @@ namespace UseCaseHelper.Controls
             tbName.Enabled = false;
 
             base.Deactivate();
+        }
+
+        private void OnValidated(object sender, EventArgs e)
+        {
+            Actor.Name = tbName.Text;
         }
     }
 }
