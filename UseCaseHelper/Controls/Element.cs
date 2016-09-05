@@ -20,21 +20,21 @@ namespace UseCaseHelper.Controls
 
 
         /// <summary>
-        /// Specifies the orignal element image.
+        /// Specifies the original background image of the element.
         /// </summary>
         [Category("Custom")]
         [Description("Specifies the original actor image.")]
         [Browsable(true)]
-        public Bitmap Original { get; set; }
+        public Bitmap OriginalBackgroundImage { get; set; }
 
 
         /// <summary>
-        /// Specifies the selected element image.
+        /// Specifies the background image that's shown when the element is selected.
         /// </summary>
         [Category("Custom")]
         [Description("Specifies the selected actor image.")]
         [Browsable(true)]
-        public Bitmap Selected { get; set; }
+        public Bitmap SelectedBackgroundImage { get; set; }
 
 
         public Element()
@@ -49,22 +49,22 @@ namespace UseCaseHelper.Controls
 
 
         /// <summary>
-        /// Selects the element.
+        /// Activates the element.
         /// </summary>
-        public new virtual void Select()
+        public virtual void Activate()
         {
             Focus();
-            BackgroundImage = Selected;
+            BackgroundImage = SelectedBackgroundImage;
         }
 
 
         /// <summary>
-        /// Deselects the element.
+        /// Deactivates the element.
         /// </summary>
-        public virtual void Deselect()
+        public virtual void Deactivate()
         {
             InvokeLostFocus(this, null);
-            BackgroundImage = Original;
+            BackgroundImage = OriginalBackgroundImage;
         }
 
 

@@ -25,7 +25,7 @@ namespace UseCaseHelper.Controls
 
             elements.Add(a);
             Controls.Add(a);
-            a.Select();
+            a.Activate();
 
 
         }
@@ -33,7 +33,7 @@ namespace UseCaseHelper.Controls
         private void OnClick(object sender, EventArgs e)
         {
             this.Focus();
-            elements.ForEach(x => x.Deselect());
+            elements.ForEach(x => x.Deactivate());
         }
     }
 }

@@ -21,9 +21,9 @@ namespace UseCaseHelper.Controls
             InitializeComponent();
         }
 
-        public override void Select()
+        public override void Activate()
         {
-            base.Select();
+            base.Activate();
 
             tbName.Focus();
         }
