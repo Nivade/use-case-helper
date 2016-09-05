@@ -37,9 +37,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Name = "Element";
             this.Size = new System.Drawing.Size(255, 130);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OnMouseUp);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BeginDrag);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drag);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.EndDrag);
             this.ResumeLayout(false);
 
         }

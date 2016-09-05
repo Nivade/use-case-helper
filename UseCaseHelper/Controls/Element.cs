@@ -71,23 +71,41 @@ namespace UseCaseHelper.Controls
             BackgroundImage = OriginalBackgroundImage;
         }
 
-        protected void OnMouseDown(object sender, MouseEventArgs e)
+
+        /// <summary>
+        /// Begins the drag 'n drop sequence for the element.
+        /// Executes on mouse down.
+        /// </summary>
+        protected void BeginDrag(object sender, MouseEventArgs e)
         {
             Activate();
             previousLocation = e.Location;
             Cursor = Cursors.Hand;
         }
 
-        protected void OnMouseMove(object sender, MouseEventArgs e)
+
+        /// <summary>
+        /// Drags the element.
+        /// Executes on mouse move.
+        /// </summary>
+        protected void Drag(object sender, MouseEventArgs e)
         {
             if (!active)
                 return;
+
             var newLocation = Location;
+
             newLocation.Offset(e.Location.X - previousLocation.X, e.Location.Y - previousLocation.Y);
+
             Location = newLocation;
         }
 
-        protected void OnMouseUp(object sender, MouseEventArgs e)
+
+        /// <summary>
+        /// Drops the element.
+        /// Executes on mouse up.
+        /// </summary>
+        protected void EndDrag(object sender, MouseEventArgs e)
         {
             active = false;
             Cursor = Cursors.Default;
