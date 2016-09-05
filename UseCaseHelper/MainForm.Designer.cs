@@ -96,7 +96,7 @@
             this.actorToolStripMenuItem.Name = "actorToolStripMenuItem";
             this.actorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.actorToolStripMenuItem.Text = "Actor";
-            this.actorToolStripMenuItem.Click += new System.EventHandler(this.AddActorToolstripClick);
+            this.actorToolStripMenuItem.Click += new System.EventHandler(this.CreateActorClick);
             // 
             // usecaseToolStripMenuItem
             // 

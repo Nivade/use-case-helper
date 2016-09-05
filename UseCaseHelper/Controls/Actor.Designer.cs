@@ -28,15 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.cmsActor = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsActor.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbName.Location = new System.Drawing.Point(0, 106);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(122, 20);
+            this.tbName.TabIndex = 0;
+            // 
+            // cmsActor
+            // 
+            this.cmsActor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.cmsActor.Name = "cmsActor";
+            this.cmsActor.Size = new System.Drawing.Size(108, 26);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // Actor
             // 
@@ -44,9 +61,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::UseCaseHelper.Properties.Resources.actor;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbName);
             this.Name = "Actor";
             this.Size = new System.Drawing.Size(122, 126);
+            this.cmsActor.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -54,6 +72,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.ContextMenuStrip cmsActor;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

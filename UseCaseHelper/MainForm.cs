@@ -21,7 +21,7 @@ namespace UseCaseHelper
             InitializeComponent();
         }
 
-        private void AddActorToolstripClick(object sender, EventArgs e)
+        private void CreateActorClick(object sender, EventArgs e)
         {
             Diagram diagram = (Diagram)Controls.Find("diagram", true).First();
 
