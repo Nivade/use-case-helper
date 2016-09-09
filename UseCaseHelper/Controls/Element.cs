@@ -10,43 +10,37 @@ using System.Windows.Forms;
 
 namespace UseCaseHelper.Controls
 {
+
+    public delegate void ElementActivatedHandler(object sender, EventArgs e);
+    public delegate void ElementDeactivatedHandler(object sender, EventArgs e);
+
     public partial class Element : UserControl
     {
+        public event ElementActivatedHandler Activated;
+        public event ElementDeactivatedHandler Deactivated;
+
 
         /// <summary>
-        /// Specifies the diagram containing this control.
-        /// </summary>
-        protected Diagram diagram;
-
-        protected Point previousLocation;
-        protected bool active = false;
-
-        /// <summary>
-        /// Specifies the original background image of the element.
+        /// Specifies element's background image.
         /// </summary>
         [Category("Custom")]
         [Description("Specifies the original actor image.")]
         [Browsable(true)]
-        public Bitmap OriginalBackgroundImage { get; set; }
+        public Bitmap DefaultBackgroundImage { get; set; }
 
 
         /// <summary>
-        /// Specifies the background image that's shown when the element is selected.
+        /// Specifies the element's background image when it is active.
         /// </summary>
         [Category("Custom")]
         [Description("Specifies the selected actor image.")]
         [Browsable(true)]
-        public Bitmap SelectedBackgroundImage { get; set; }
+        public Bitmap ActiveBackgroundImage { get; set; }
 
 
         public Element()
         {
             InitializeComponent();
-        }
-
-        public Element(Diagram diagram) : this()
-        {
-            this.diagram = diagram;
         }
 
 
@@ -55,9 +49,8 @@ namespace UseCaseHelper.Controls
         /// </summary>
         public virtual void Activate()
         {
-            Focus();
-            active = true;
-            BackgroundImage = SelectedBackgroundImage;
+            BackgroundImage = ActiveBackgroundImage;
+            OnActivated(null);
         }
 
 
@@ -66,49 +59,20 @@ namespace UseCaseHelper.Controls
         /// </summary>
         public virtual void Deactivate()
         {
-            InvokeLostFocus(this, null);
-            active = false;
-            BackgroundImage = OriginalBackgroundImage;
+            BackgroundImage = DefaultBackgroundImage;
+            OnDeactivated(null);
         }
 
-
-        /// <summary>
-        /// Begins the drag 'n drop sequence for the element.
-        /// Executes on mouse down.
-        /// </summary>
-        protected void BeginDrag(object sender, MouseEventArgs e)
+        protected virtual void OnActivated(EventArgs e)
         {
-            Activate();
-            previousLocation = e.Location;
-            Cursor = Cursors.Hand;
+            if (Activated != null)
+                Activated(this, e);
         }
 
-
-        /// <summary>
-        /// Drags the element.
-        /// Executes on mouse move.
-        /// </summary>
-        protected void Drag(object sender, MouseEventArgs e)
+        protected virtual void OnDeactivated(EventArgs e)
         {
-            if (!active)
-                return;
-
-            var newLocation = Location;
-
-            newLocation.Offset(e.Location.X - previousLocation.X, e.Location.Y - previousLocation.Y);
-
-            Location = newLocation;
-        }
-
-
-        /// <summary>
-        /// Drops the element.
-        /// Executes on mouse up.
-        /// </summary>
-        protected void EndDrag(object sender, MouseEventArgs e)
-        {
-            active = false;
-            Cursor = Cursors.Default;
+            if (Deactivated != null)
+                Deactivated(this, e);
         }
     }
 }

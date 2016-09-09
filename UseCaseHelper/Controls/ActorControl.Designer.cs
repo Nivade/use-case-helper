@@ -39,7 +39,6 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(100, 19);
             this.tbName.TabIndex = 0;
-            this.tbName.Validated += new System.EventHandler(this.OnValidated);
             // 
             // ActorControl
             // 
@@ -49,8 +48,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.tbName);
             this.Name = "ActorControl";
-            this.OriginalBackgroundImage = global::UseCaseHelper.Properties.Resources.actor;
-            this.SelectedBackgroundImage = global::UseCaseHelper.Properties.Resources.actor_click;
+            this.DefaultBackgroundImage = global::UseCaseHelper.Properties.Resources.actor;
+            this.ActiveBackgroundImage = global::UseCaseHelper.Properties.Resources.actor_click;
             this.Size = new System.Drawing.Size(99, 140);
             this.ResumeLayout(false);
             this.PerformLayout();

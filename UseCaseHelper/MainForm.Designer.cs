@@ -37,7 +37,7 @@
             this.createToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.actorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usecaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.diagram = new UseCaseHelper.Controls.Diagram();
+            this.diagram = new UseCaseHelper.Controls.Diagram(this);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 

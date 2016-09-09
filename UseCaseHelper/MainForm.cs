@@ -23,7 +23,7 @@ namespace UseCaseHelper
 
         private void CreateActorClick(object sender, EventArgs e)
         {
-            Diagram diagram = (Diagram)Controls.Find("diagram", true).First();
+            //Diagram diagram = (Diagram)Controls.Find("diagram", true).First();
         }
 
 

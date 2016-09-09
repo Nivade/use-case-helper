@@ -13,9 +13,13 @@ namespace UseCaseHelper.Controls
 {
     public partial class ActorControl : Element
     {
-        public Actor Actor => new Actor();
+        public new string Name
+        {
+            get { return tbName.Text; }
+            set { tbName.Text = value; }
+        }
 
-        public ActorControl(Diagram diagram) : base(diagram)
+        public ActorControl()
         {
             InitializeComponent();
         }
@@ -24,20 +28,15 @@ namespace UseCaseHelper.Controls
         {
             base.Activate();
 
-            tbName.Enabled = true;
-            tbName.Focus();
+            // Select the textbox.
+            //tbName.Enabled = true;
+            //tbName.Focus();
         }
 
         public override void Deactivate()
         {
-            tbName.Enabled = false;
-
+            //tbName.Enabled = false;
             base.Deactivate();
-        }
-
-        private void OnValidated(object sender, EventArgs e)
-        {
-            Actor.Name = tbName.Text;
         }
     }
 }

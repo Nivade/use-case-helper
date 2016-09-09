@@ -30,31 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             this.diagramContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addActorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addUseCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmiCreateActor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmiCreateUseCase = new System.Windows.Forms.ToolStripMenuItem();
             this.diagramContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // diagramContextMenu
             // 
             this.diagramContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addActorToolStripMenuItem,
-            this.addUseCaseToolStripMenuItem});
+            this.tmiCreateActor,
+            this.tmiCreateUseCase});
             this.diagramContextMenu.Name = "diagramContextMenu";
-            this.diagramContextMenu.Size = new System.Drawing.Size(147, 48);
+            this.diagramContextMenu.Size = new System.Drawing.Size(154, 70);
             // 
-            // addActorToolStripMenuItem
+            // tmiCreateActor
             // 
-            this.addActorToolStripMenuItem.Name = "addActorToolStripMenuItem";
-            this.addActorToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.addActorToolStripMenuItem.Text = "Add ActorControl";
-            this.addActorToolStripMenuItem.Click += new System.EventHandler(this.OnClick);
+            this.tmiCreateActor.Name = "tmiCreateActor";
+            this.tmiCreateActor.Size = new System.Drawing.Size(153, 22);
+            this.tmiCreateActor.Text = "Create Actor";
+            this.tmiCreateActor.Click += new System.EventHandler(this.OnCreateActorClick);
             // 
-            // addUseCaseToolStripMenuItem
+            // tmiCreateUseCase
             // 
-            this.addUseCaseToolStripMenuItem.Name = "addUseCaseToolStripMenuItem";
-            this.addUseCaseToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.addUseCaseToolStripMenuItem.Text = "Add Use Case";
+            this.tmiCreateUseCase.Name = "tmiCreateUseCase";
+            this.tmiCreateUseCase.Size = new System.Drawing.Size(153, 22);
+            this.tmiCreateUseCase.Text = "Create Usecase";
+            this.tmiCreateUseCase.Click += new System.EventHandler(this.OnCreateUseCaseClick);
             // 
             // Diagram
             // 
@@ -64,7 +65,7 @@
             this.ContextMenuStrip = this.diagramContextMenu;
             this.Name = "Diagram";
             this.Size = new System.Drawing.Size(1056, 516);
-            this.Click += new System.EventHandler(this.OnClick);
+            this.Click += new System.EventHandler(this.OnDiagramClicked);
             this.diagramContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -73,7 +74,7 @@
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip diagramContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem addActorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addUseCaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tmiCreateActor;
+        private System.Windows.Forms.ToolStripMenuItem tmiCreateUseCase;
     }
 }
