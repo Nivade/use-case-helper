@@ -21,7 +21,7 @@ namespace UseCaseHelper.Controls
         public bool ActiveElementPressed { get; set; }
         public Point PreviousLocation { get; private set; }
 
-        public MainForm MainForm { get; private set; }
+        public Form MainForm { get; private set; }
 
         public List<Element> Elements
         {
@@ -43,7 +43,7 @@ namespace UseCaseHelper.Controls
         }
 
 
-        public Diagram(MainForm parent) : this()
+        public Diagram(Form parent) : this()
         {
             MainForm = parent;
         }
@@ -128,6 +128,7 @@ namespace UseCaseHelper.Controls
 
             UseCasePropertyForm = new UseCaseProperties((UseCaseControl)sender, actors);
             UseCasePropertyForm.Show();
+            UseCasePropertyForm.Location = new Point(MainForm.Location.X + MainForm.Size.Width, MainForm.Location.Y);
         }
         private void ClosePropertyForm(object sender, EventArgs e)
         {

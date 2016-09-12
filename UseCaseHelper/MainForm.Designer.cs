@@ -45,7 +45,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 681);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1261, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1090, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -56,7 +56,7 @@
             this.createToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1261, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1090, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,35 +88,38 @@
             this.actorToolStripMenuItem,
             this.usecaseToolStripMenuItem});
             this.createToolStripMenuItem1.Name = "createToolStripMenuItem1";
-            this.createToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.createToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.createToolStripMenuItem1.Text = "Create";
             // 
             // actorToolStripMenuItem
             // 
             this.actorToolStripMenuItem.Name = "actorToolStripMenuItem";
-            this.actorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actorToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.actorToolStripMenuItem.Text = "ActorControl";
             this.actorToolStripMenuItem.Click += new System.EventHandler(this.CreateActorClick);
             // 
             // usecaseToolStripMenuItem
             // 
             this.usecaseToolStripMenuItem.Name = "usecaseToolStripMenuItem";
-            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.usecaseToolStripMenuItem.Text = "Use case";
             // 
             // diagram
             // 
+            this.diagram.ActiveElement = null;
+            this.diagram.ActiveElementPressed = false;
             this.diagram.BackColor = System.Drawing.Color.White;
             this.diagram.Location = new System.Drawing.Point(0, 27);
             this.diagram.Name = "diagram";
             this.diagram.Size = new System.Drawing.Size(1261, 651);
             this.diagram.TabIndex = 2;
+            this.diagram.UseCasePropertyForm = null;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 703);
+            this.ClientSize = new System.Drawing.Size(1090, 703);
             this.Controls.Add(this.diagram);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
