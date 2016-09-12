@@ -22,26 +22,21 @@ namespace UseCaseHelper.Controls
         public Point PreviousLocation { get; private set; }
 
         public Form MainForm { get; private set; }
-
-        public List<Element> Elements
-        {
-            get
-            {
-                var l = new List<Element>();
-                foreach (Control c in Controls.AsQueryable())
-                {
-                    if (c.GetType() == typeof(Element))
-                        l.Add((Element) c);
-                }
-                return l;
-            }
-        }
+        private Timer timer = new Timer();
 
         public Diagram()
         {
             InitializeComponent();
+            timer.Enabled = true;
+            timer.Interval = 100;  /* 100 millisec */
+            timer.Tick += new EventHandler(TimerCallback);
         }
 
+        private void TimerCallback(object sender, EventArgs e)
+        {
+            this.Invalidate();
+            return;
+        }
 
         public Diagram(Form parent) : this()
         {
@@ -85,7 +80,7 @@ namespace UseCaseHelper.Controls
         /// Initializes an existing element with default properties.
         /// </summary>
         /// <param name="element"> Specifies the element to initialize. </param>
-        private void initializeElement(Element element)
+        public void CreateElement(Element element)
         {
             DeselectAll();
 
@@ -109,12 +104,12 @@ namespace UseCaseHelper.Controls
 
         private void OnCreateActorClick(object sender, EventArgs e)
         {
-            initializeElement(new ActorControl());
+            CreateElement(new ActorControl());
         }
 
         private void OnCreateUseCaseClick(object sender, EventArgs e)
         {
-            initializeElement(new UseCaseControl());
+            CreateElement(new UseCaseControl());
         }
 
         private void ShowPropertyForm(object sender, EventArgs e)
@@ -173,6 +168,28 @@ namespace UseCaseHelper.Controls
             ActiveElementPressed = false;
         }
 
-        
+        private void OnPaint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.White);
+
+            foreach (var element in elements)
+            {
+                if (element.GetType() == typeof(UseCaseControl))
+                {
+                    Point elementCenter = new Point(element.Location.X + element.Size.Width / 2,
+                            element.Location.Y + element.Size.Height / 2);
+
+                    foreach (ActorControl actor in ((UseCaseControl) element).Actors)
+                    {
+                        Point actorCenter = new Point(actor.Location.X + actor.Size.Width / 2,
+                            actor.Location.Y + actor.Size.Height / 2);
+
+                        e.Graphics.DrawLine(new Pen(Color.Black), elementCenter, actorCenter);
+                    }
+                }
+            }
+
+
+        }
     }
 }

@@ -71,8 +71,8 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "Close";
             // 
             // createToolStripMenuItem
             // 
@@ -88,21 +88,22 @@
             this.actorToolStripMenuItem,
             this.usecaseToolStripMenuItem});
             this.createToolStripMenuItem1.Name = "createToolStripMenuItem1";
-            this.createToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.createToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.createToolStripMenuItem1.Text = "Create";
             // 
             // actorToolStripMenuItem
             // 
             this.actorToolStripMenuItem.Name = "actorToolStripMenuItem";
-            this.actorToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.actorToolStripMenuItem.Text = "ActorControl";
+            this.actorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actorToolStripMenuItem.Text = "Actor";
             this.actorToolStripMenuItem.Click += new System.EventHandler(this.CreateActorClick);
             // 
             // usecaseToolStripMenuItem
             // 
             this.usecaseToolStripMenuItem.Name = "usecaseToolStripMenuItem";
-            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.usecaseToolStripMenuItem.Text = "Use case";
+            this.usecaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usecaseToolStripMenuItem.Text = "Usecase";
+            this.usecaseToolStripMenuItem.Click += new System.EventHandler(this.CreateUseCaseClick);
             // 
             // diagram
             // 

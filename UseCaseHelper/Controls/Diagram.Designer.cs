@@ -41,7 +41,7 @@
             this.tmiCreateActor,
             this.tmiCreateUseCase});
             this.diagramContextMenu.Name = "diagramContextMenu";
-            this.diagramContextMenu.Size = new System.Drawing.Size(154, 70);
+            this.diagramContextMenu.Size = new System.Drawing.Size(154, 48);
             // 
             // tmiCreateActor
             // 
@@ -66,6 +66,7 @@
             this.Name = "Diagram";
             this.Size = new System.Drawing.Size(1056, 516);
             this.Click += new System.EventHandler(this.OnDiagramClicked);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             this.diagramContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

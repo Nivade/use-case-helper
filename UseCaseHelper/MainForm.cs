@@ -23,9 +23,12 @@ namespace UseCaseHelper
 
         private void CreateActorClick(object sender, EventArgs e)
         {
-            //Diagram diagram = (Diagram)Controls.Find("diagram", true).First();
+            diagram.CreateElement(new ActorControl());
         }
 
-
+        private void CreateUseCaseClick(object sender, EventArgs e)
+        {
+            diagram.CreateElement(new UseCaseControl());
+        }
     }
 }
