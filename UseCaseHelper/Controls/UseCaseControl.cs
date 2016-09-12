@@ -23,7 +23,7 @@ namespace UseCaseHelper.Controls
             set { tbName.Text = value; }
         }
         public string Summary { get; set; }
-        public IEnumerable<ActorControl> Actors { get; set; }
+        public ICollection<ActorControl> Actors { get; set; }
         public string Assumptions { get; set; }
         public string Description { get; set; }
         public string Exceptions { get; set; }
@@ -32,6 +32,7 @@ namespace UseCaseHelper.Controls
         public UseCaseControl()
         {
             InitializeComponent();
+            Actors = new List<ActorControl>();
         }
     }
 }

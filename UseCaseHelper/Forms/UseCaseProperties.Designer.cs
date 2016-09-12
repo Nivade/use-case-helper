@@ -234,6 +234,7 @@
             this.cbActors.Name = "cbActors";
             this.cbActors.Size = new System.Drawing.Size(121, 21);
             this.cbActors.TabIndex = 14;
+            this.cbActors.SelectionChangeCommitted += new System.EventHandler(this.OnActorSelected);
             // 
             // btnSave
             // 

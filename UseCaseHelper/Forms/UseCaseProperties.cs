@@ -15,17 +15,17 @@ namespace UseCaseHelper.Forms
 {
     public partial class UseCaseProperties : Form
     {
-        private UseCaseControl activeUseCaseControl;
-        private IEnumerable<ActorControl> actorControls;
+        private UseCaseControl target;
+        private IEnumerable<ActorControl> actors;
 
-        public UseCaseProperties(UseCaseControl activeUseCaseControl, IEnumerable<ActorControl> actorControls )
+        public UseCaseProperties(UseCaseControl target, IEnumerable<ActorControl> actors )
         {
             InitializeComponent();
 
-            this.activeUseCaseControl = activeUseCaseControl;
-            this.actorControls = actorControls;
+            this.target = target;
+            this.actors = actors;
 
-            PopulateFields(activeUseCaseControl);
+            PopulateFields(target);
             populateActorComboBox();
         }
 
@@ -37,28 +37,39 @@ namespace UseCaseHelper.Forms
             tbResult.Text = useCase.Result;
             tbSummary.Text = useCase.Summary;
             tbExceptions.Text = useCase.Exceptions;
+
+            PopulateActorTextbox(useCase);
             
+        }
+
+        public void PopulateActorTextbox(UseCaseControl useCase)
+        {
+            tbActors.Text = string.Empty;
+            foreach (ActorControl a in useCase.Actors)
+            {
+                tbActors.Text += a.Name + ", ";
+            }
         }
 
         public void SaveFields()
         {
-            activeUseCaseControl.Name = tbName.Text;
-            activeUseCaseControl.Assumptions = tbAssumptions.Text;
-            activeUseCaseControl.Description = tbDescription.Text;
-            activeUseCaseControl.Result = tbResult.Text;
-            activeUseCaseControl.Summary = tbSummary.Text;
-            activeUseCaseControl.Exceptions = tbExceptions.Text;
+            target.Name = tbName.Text;
+            target.Assumptions = tbAssumptions.Text;
+            target.Description = tbDescription.Text;
+            target.Result = tbResult.Text;
+            target.Summary = tbSummary.Text;
+            target.Exceptions = tbExceptions.Text;
         }
 
         private void populateActorComboBox()
         {
-            if (actorControls == null)
+            if (actors == null)
                 return;
 
-            if (!actorControls.Any())
+            if (!actors.Any())
                 return;
 
-            foreach (var c in actorControls)
+            foreach (var c in actors)
             {
                 cbActors.Items.Add(c.Name);
             }
@@ -68,6 +79,24 @@ namespace UseCaseHelper.Forms
         {
             SaveFields();
             Close();
+        }
+
+        private void OnActorSelected(object sender, EventArgs e)
+        {
+            string name = cbActors.SelectedItem.ToString();
+
+            ActorControl selectedActor = actors.Where(x => x.Name == name).First();
+
+            if (target.Actors.Contains(selectedActor))
+            {
+                target.Actors.Remove(selectedActor);
+            }
+            else
+            {
+                target.Actors.Add(selectedActor);
+            }
+
+            PopulateActorTextbox(target);
         }
     }
 }
