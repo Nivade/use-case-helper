@@ -126,12 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UseCaseHelper.Domain\UseCaseHelper.Domain.csproj">
-      <Project>{7af7e8cf-a90c-4f59-966c-47e3ce75d1dc}</Project>
-      <Name>UseCaseHelper.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Graphics\actor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

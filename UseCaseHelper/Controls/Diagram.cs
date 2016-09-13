@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UseCaseHelper.Domain;
 using UseCaseHelper.Forms;
 
 namespace UseCaseHelper.Controls
@@ -20,22 +19,21 @@ namespace UseCaseHelper.Controls
         public Element ActiveElement { get; set; }
         public bool ActiveElementPressed { get; set; }
         public Point PreviousLocation { get; private set; }
-
         public Form MainForm { get; private set; }
         private Timer timer = new Timer();
 
         public Diagram()
         {
             InitializeComponent();
+
             timer.Enabled = true;
-            timer.Interval = 100;  /* 100 millisec */
-            timer.Tick += new EventHandler(TimerCallback);
+            timer.Interval = 100;
+            timer.Tick += TimerCallback;
         }
 
         private void TimerCallback(object sender, EventArgs e)
         {
-            this.Invalidate();
-            return;
+            Invalidate();
         }
 
         public Diagram(Form parent) : this()
@@ -43,6 +41,10 @@ namespace UseCaseHelper.Controls
             MainForm = parent;
         }
 
+
+        /// <summary>
+        /// Fires when the user clicks anywhere in the diagram.
+        /// </summary>
         private void OnDiagramClicked(object sender, EventArgs e)
         {
             DeselectAll();

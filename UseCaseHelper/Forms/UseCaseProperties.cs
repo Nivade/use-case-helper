@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UseCaseHelper.Controls;
-using UseCaseHelper.Domain;
 
 namespace UseCaseHelper.Forms
 {
